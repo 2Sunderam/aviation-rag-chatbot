@@ -48,7 +48,7 @@ def embed_texts(emb: GemmaEmbeddings, client, chunks: list[dict], batch: int) ->
     for group in _batches(chunks, batch):
         ids = [point_id(c["chunk_id"]) for c in group]
         have = existing_ids(client, ids)
-        todo = [(i, c) for i, c in zip(ids, group) if i not in have]
+        todo = [(i, c) for i, c in zip(ids, group, strict=True) if i not in have]
         if todo:
             # title + section give each chunk context, e.g. "Pilot's Handbook ... > Oxygen Systems"
             inputs = [doc_prompt(c["text"], f"{c['title']} > {c['section']}" if c["section"] else c["title"])
@@ -69,7 +69,7 @@ def embed_figures(emb: GemmaEmbeddings, client, figs: list[dict], batch: int) ->
     for group in _batches(figs, batch):
         ids = [point_id(f["fig_id"]) for f in group]
         have = existing_ids(client, ids)
-        todo = [(i, f) for i, f in zip(ids, group) if i not in have]
+        todo = [(i, f) for i, f in zip(ids, group, strict=True) if i not in have]
         if todo:
             vectors = emb.embed_images([f["path"] for _, f in todo])
             ensure_collection(client, len(vectors[0]))

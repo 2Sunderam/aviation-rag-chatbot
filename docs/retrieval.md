@@ -33,8 +33,6 @@ Hit.citation  # "Pilot's Handbook of Aeronautical Knowledge, pp. 169-170"
 RetrievalResult(queries, chunks: list[Hit], figures: list[Hit], timings_ms)
 ```
 
-`FAARetriever` wraps the searcher as a LangChain `BaseRetriever` (returns `Document`s with citation metadata).
-
 ## Measured
 
 Search ~20 ms (text) + ~13 ms (figures). Hybrid beats either retriever alone

@@ -143,7 +143,7 @@ async def main_async(n: int | None, skip_ragas: bool = False) -> None:
     judge = judge_llm(3000)
     sem = asyncio.Semaphore(JUDGE_CONCURRENCY)
     cite_verdicts = await asyncio.gather(*[judge_citations(judge, x, sem) for x in answered])
-    judged_answers = sum(bool(v) for v, x in zip(cite_verdicts, answered) if x["sources"])
+    judged_answers = sum(bool(v) for v, x in zip(cite_verdicts, answered, strict=True) if x["sources"])
 
     if df is not None:
         faith = [v for v in df["faithfulness"].tolist() if v == v]  # drop NaN

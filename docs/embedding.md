@@ -36,6 +36,4 @@ Counts: 4,106 text + 2,761 figure points = 6,867.
 
 ## Notes
 
-- `migrate.py` copied the first dense-only run (`faa_handbooks`) into the hybrid collection without
-  re-embedding. Not needed for a fresh setup: `run.py` writes straight to `faa_hybrid`.
 - Mercury/Groq are not used here; embeddings are 100 % local and open.

@@ -17,7 +17,6 @@ from qdrant_client import QdrantClient, models
 load_dotenv()
 
 COLLECTION = os.getenv("QDRANT_HYBRID_COLLECTION", "faa_hybrid")
-LEGACY_COLLECTION = "faa_handbooks"  # first dense-only run; copied into COLLECTION by migrate.py
 DENSE, SPARSE = "dense", "bm25"
 BM25_MODEL = "Qdrant/bm25"
 BM25_AVG_LEN = 480.0  # average words per chunk (default 256 assumes shorter docs)
@@ -65,7 +64,7 @@ def upsert(client: QdrantClient, ids: list[str], vectors: list[list[float]], bm2
            payloads: list[dict], name: str = COLLECTION) -> None:
     points = [
         models.PointStruct(id=i, vector={DENSE: v, SPARSE: bm25_doc(t)}, payload=p)
-        for i, v, t, p in zip(ids, vectors, bm25_texts, payloads)
+        for i, v, t, p in zip(ids, vectors, bm25_texts, payloads, strict=True)
     ]
     client.upsert(name, points=points, wait=True)
 

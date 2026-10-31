@@ -31,7 +31,8 @@ class GemmaEmbeddings(Embeddings):
         self.model = model
         self._client = httpx.Client(base_url=url, timeout=timeout)
 
-    def _embed(self, inputs: list, retries: int = 3) -> list[list[float]]:
+    def embed_raw(self, inputs: list, retries: int = 3) -> list[list[float]]:
+        """Embed inputs as given (prompts already applied, or {"image": b64} dicts)."""
         for attempt in range(retries):
             try:
                 r = self._client.post("/api/embed", json={"model": self.model, "input": inputs})
@@ -46,10 +47,10 @@ class GemmaEmbeddings(Embeddings):
     # LangChain interface -------------------------------------------------
     def embed_documents(self, texts: list[str]) -> list[list[float]]:
         """Texts already formatted with doc_prompt() are sent as-is."""
-        return self._embed([t if t.startswith("title: ") else doc_prompt(t) for t in texts])
+        return self.embed_raw([t if t.startswith("title: ") else doc_prompt(t) for t in texts])
 
     def embed_query(self, text: str) -> list[float]:
-        return self._embed([query_prompt(text)])[0]
+        return self.embed_raw([query_prompt(text)])[0]
 
     # images ----------------------------------------------------------------
     def embed_images(self, paths: list[str | Path]) -> list[list[float]]:
@@ -57,5 +58,5 @@ class GemmaEmbeddings(Embeddings):
         out = []
         for p in paths:
             b64 = base64.b64encode(Path(p).read_bytes()).decode()
-            out.extend(self._embed([{"image": b64}]))
+            out.extend(self.embed_raw([{"image": b64}]))
         return out

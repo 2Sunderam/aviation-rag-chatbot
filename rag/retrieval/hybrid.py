@@ -10,9 +10,6 @@ UI can show "retrieved chunks" and "related figures" side by side.
 import time
 from dataclasses import dataclass, field
 
-from langchain_core.callbacks import CallbackManagerForRetrieverRun
-from langchain_core.documents import Document
-from langchain_core.retrievers import BaseRetriever
 from qdrant_client import QdrantClient, models
 
 from rag.embedding.gemma import GemmaEmbeddings, query_prompt
@@ -65,7 +62,7 @@ class HybridSearcher:
                 pdf_ids: list[str] | None, explain: bool) -> list[Hit]:
         flt = _filter(kind, pdf_ids)
         prefetch = []
-        for vec, q in zip(qvecs, queries):
+        for vec, q in zip(qvecs, queries, strict=True):
             prefetch += [models.Prefetch(query=vec, using=DENSE, limit=PREFETCH_K, filter=flt),
                          models.Prefetch(query=bm25_doc(q), using=SPARSE, limit=PREFETCH_K, filter=flt)]
         fused = self.client.query_points(
@@ -95,7 +92,7 @@ class HybridSearcher:
                pdf_ids: list[str] | None = None, explain: bool = True) -> RetrievalResult:
         queries = [queries] if isinstance(queries, str) else queries
         t0 = time.perf_counter()
-        qvecs = self.emb._embed([query_prompt(q) for q in queries])  # one batched embedding call
+        qvecs = self.emb.embed_raw([query_prompt(q) for q in queries])  # one batched embedding call
         t1 = time.perf_counter()
         chunks = self._search(qvecs, queries, "text", k, pdf_ids, explain)
         t2 = time.perf_counter()
@@ -106,18 +103,3 @@ class HybridSearcher:
             "search_figures": round((t3 - t2) * 1000), "total": round((t3 - t0) * 1000),
         })
 
-
-class FAARetriever(BaseRetriever):
-    """LangChain retriever wrapper (text chunks only) for use in chains."""
-
-    searcher: HybridSearcher
-    k: int = 5
-
-    model_config = {"arbitrary_types_allowed": True}
-
-    def _get_relevant_documents(self, query: str, *, run_manager: CallbackManagerForRetrieverRun) -> list[Document]:
-        res = self.searcher.search(query, k=self.k, fig_k=0, explain=False)
-        return [Document(page_content=h.payload["text"],
-                         metadata={**{k: v for k, v in h.payload.items() if k != "text"},
-                                   "citation": h.citation, "rrf_score": h.rrf_score})
-                for h in res.chunks]

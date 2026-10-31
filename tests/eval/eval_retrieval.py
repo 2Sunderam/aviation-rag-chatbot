@@ -49,7 +49,7 @@ def main() -> None:
     client, emb = engine.searcher.client, engine.searcher.emb
 
     def dense(q: str) -> list[dict]:
-        vec = emb._embed([query_prompt(q)])[0]
+        vec = emb.embed_raw([query_prompt(q)])[0]
         return [p.payload for p in client.query_points(COLLECTION, query=vec, using=DENSE, limit=MAX_K,
                                                        query_filter=TEXT_ONLY, with_payload=True).points]
 

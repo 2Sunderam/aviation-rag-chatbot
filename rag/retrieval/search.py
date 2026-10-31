@@ -12,7 +12,7 @@ from .hybrid import HybridSearcher
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("query")
-    ap.add_argument("--k", type=int, default=6)
+    ap.add_argument("--k", type=int, default=5)
     ap.add_argument("--figs", type=int, default=3)
     ap.add_argument("--only", nargs="*", help="restrict to pdf_ids")
     a = ap.parse_args()
