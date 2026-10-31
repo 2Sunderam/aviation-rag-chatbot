@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-31",
+  "seed": 42,
+  "generator_models": [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b"
+  ],
+  "counts": {
+    "single": 80,
+    "multi": 10,
+    "unanswerable": 10
+  },
+  "relevance_rule": "retrieved chunk is relevant if same pdf_id and page range overlaps a gold chunk"
+}

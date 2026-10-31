@@ -58,7 +58,8 @@ function kind(h) {
 
 function renderRetrieval(ev) {
   $("#retrievalEmpty").hidden = true;
-  $("#query").innerHTML = ev.query ? `Search query: <i>${esc(ev.query)}</i>` : "";
+  $("#query").innerHTML = `Planner → ${ev.queries.length} search quer${ev.queries.length > 1 ? "ies" : "y"}: ` +
+    ev.queries.map((q, i) => `<i>Q${i + 1}: ${esc(q)}</i>`).join(" · ");
   const maxRrf = Math.max(...ev.chunks.map((h) => h.rrf_score), 1e-9);
   $("#chunkHead").hidden = !ev.chunks.length;
   $("#chunks").innerHTML = ev.chunks.map((h, i) => {
@@ -67,7 +68,7 @@ function renderRetrieval(ev) {
       <div class="top"><span class="cit">[${i + 1}] ${esc(h.citation)}</span><span>RRF ${h.rrf_score.toFixed(3)}</span></div>
       <div class="sec">${esc(p.section || "")}</div>
       <div class="bar"><span style="width:${(100 * h.rrf_score / maxRrf).toFixed(0)}%"></span></div>
-      <div class="badges"><span class="badge">${label}</span>
+      <div class="badges"><span class="badge">${label}</span>${h.query_idx != null && ev.queries.length > 1 ? `<span class="badge">Q${h.query_idx + 1}</span>` : ""}
         <span class="badge">dense ${h.dense_rank ? "#" + h.dense_rank + " · cos " + h.dense_score.toFixed(3) : "—"}</span>
         <span class="badge">BM25 ${h.bm25_rank ? "#" + h.bm25_rank + " · " + h.bm25_score.toFixed(2) : "—"}</span>
         ${p.ocr ? '<span class="badge">OCR</span>' : ""}</div>
@@ -97,7 +98,7 @@ $("#figures").addEventListener("click", (e) => {
 function renderTimings(t) {
   const gen = Math.max((t.llm_total || 0) - (t.llm_first_token || 0), 0);
   const parts = [["t-embed", "embed", t.embed], ["t-search", "search", (t.search_text || 0) + (t.search_figures || 0)],
-    ["t-rewrite", "rewrite", t.rewrite], ["t-ttft", "LLM 1st token", t.llm_first_token], ["t-gen", "generation", gen]]
+    ["t-rewrite", "planner", t.plan], ["t-ttft", "LLM 1st token", t.llm_first_token], ["t-gen", "generation", gen]]
     .filter((p) => p[2]);
   const total = parts.reduce((a, p) => a + p[2], 0) || 1;
   $("#timings").innerHTML = parts.map(([c, l, v]) =>

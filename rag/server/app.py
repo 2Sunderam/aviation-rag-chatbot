@@ -40,7 +40,7 @@ app.mount("/static", StaticFiles(directory=STATIC), name="static")
 class ChatRequest(BaseModel):
     session_id: str = Field(min_length=1, max_length=64)
     message: str = Field(min_length=1, max_length=2000)
-    k: int = Field(5, ge=1, le=12)
+    k: int | None = Field(None, ge=1, le=12)
     fig_k: int = Field(3, ge=0, le=6)
     pdf_ids: list[str] | None = None
 

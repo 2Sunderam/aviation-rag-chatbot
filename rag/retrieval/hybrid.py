@@ -1,7 +1,8 @@
 """Hybrid retrieval: dense (EmbeddingGemma 2, cosine) + BM25 (Qdrant server-side), fused with RRF.
 
-All fusion happens inside Qdrant in one Query API call:
-    prefetch dense top-N  +  prefetch BM25 top-N  ->  FusionQuery(RRF)  ->  top-k
+Supports several sub-queries (from the query planner) in ONE Qdrant call:
+    for each query: prefetch dense top-N + prefetch BM25 top-N
+    -> FusionQuery(RRF) over all prefetches -> top-k
 Text chunks and figures are searched separately (payload filter on "type") so the
 UI can show "retrieved chunks" and "related figures" side by side.
 """
@@ -14,18 +15,21 @@ from langchain_core.documents import Document
 from langchain_core.retrievers import BaseRetriever
 from qdrant_client import QdrantClient, models
 
-from rag.embedding.gemma import GemmaEmbeddings
+from rag.embedding.gemma import GemmaEmbeddings, query_prompt
 from rag.embedding.store import COLLECTION, DENSE, SPARSE, bm25_doc, get_client
+
+PREFETCH_K = 30  # candidates per retriever per sub-query
 
 
 @dataclass
 class Hit:
     id: str
     rrf_score: float
-    dense_rank: int | None  # 1-based rank in the dense list (None = not in top-N)
-    bm25_rank: int | None  # 1-based rank in the BM25 list
+    dense_rank: int | None  # best 1-based rank in any sub-query's dense list (None = not in top-N)
+    bm25_rank: int | None  # best rank in any sub-query's BM25 list
     dense_score: float | None
     bm25_score: float | None
+    query_idx: int | None  # which sub-query ranked it best (index into RetrievalResult.queries)
     payload: dict
 
     @property
@@ -37,7 +41,7 @@ class Hit:
 
 @dataclass
 class RetrievalResult:
-    query: str
+    queries: list[str]
     chunks: list[Hit]
     figures: list[Hit]
     timings_ms: dict = field(default_factory=dict)
@@ -57,41 +61,47 @@ class HybridSearcher:
         self.emb = embeddings or GemmaEmbeddings()
         self.collection = collection
 
-    def _search(self, qvec: list[float], query: str, kind: str, k: int, prefetch_k: int,
+    def _search(self, qvecs: list[list[float]], queries: list[str], kind: str, k: int,
                 pdf_ids: list[str] | None, explain: bool) -> list[Hit]:
         flt = _filter(kind, pdf_ids)
-        dense = models.Prefetch(query=qvec, using=DENSE, limit=prefetch_k, filter=flt)
-        sparse = models.Prefetch(query=bm25_doc(query), using=SPARSE, limit=prefetch_k, filter=flt)
+        prefetch = []
+        for vec, q in zip(qvecs, queries):
+            prefetch += [models.Prefetch(query=vec, using=DENSE, limit=PREFETCH_K, filter=flt),
+                         models.Prefetch(query=bm25_doc(q), using=SPARSE, limit=PREFETCH_K, filter=flt)]
         fused = self.client.query_points(
-            self.collection, prefetch=[dense, sparse], query=models.FusionQuery(fusion=models.Fusion.RRF),
+            self.collection, prefetch=prefetch, query=models.FusionQuery(fusion=models.Fusion.RRF),
             limit=k, with_payload=True,
         ).points
 
-        ranks: dict[str, dict[str, tuple[int, float]]] = {"dense": {}, "bm25": {}}
-        if explain:  # each retriever's own ranking, for the retrieval visualization
-            d, s = self.client.query_batch_points(self.collection, requests=[
-                models.QueryRequest(query=qvec, using=DENSE, limit=prefetch_k, filter=flt),
-                models.QueryRequest(query=bm25_doc(query), using=SPARSE, limit=prefetch_k, filter=flt),
-            ])
-            ranks["dense"] = {str(p.id): (r, p.score) for r, p in enumerate(d.points, 1)}
-            ranks["bm25"] = {str(p.id): (r, p.score) for r, p in enumerate(s.points, 1)}
+        # best rank per retriever across sub-queries, for the retrieval visualization
+        best: dict[str, dict[str, tuple[int, float, int]]] = {"dense": {}, "bm25": {}}
+        if explain:
+            reqs = [models.QueryRequest(query=p.query, using=p.using, limit=PREFETCH_K, filter=flt) for p in prefetch]
+            for i, resp in enumerate(self.client.query_batch_points(self.collection, requests=reqs)):
+                which = "dense" if i % 2 == 0 else "bm25"
+                for rank, p in enumerate(resp.points, 1):
+                    prev = best[which].get(str(p.id))
+                    if prev is None or rank < prev[0]:
+                        best[which][str(p.id)] = (rank, p.score, i // 2)
 
         hits = []
         for p in fused:
-            dr, br = ranks["dense"].get(str(p.id)), ranks["bm25"].get(str(p.id))
-            hits.append(Hit(str(p.id), p.score, dr and dr[0], br and br[0], dr and dr[1], br and br[1], p.payload))
+            d, b = best["dense"].get(str(p.id)), best["bm25"].get(str(p.id))
+            q_idx = min((x for x in (d, b) if x), key=lambda x: x[0])[2] if (d or b) else None
+            hits.append(Hit(str(p.id), p.score, d and d[0], b and b[0], d and d[1], b and b[1], q_idx, p.payload))
         return hits
 
-    def search(self, query: str, k: int = 6, fig_k: int = 3, prefetch_k: int = 50,
+    def search(self, queries: str | list[str], k: int = 5, fig_k: int = 3,
                pdf_ids: list[str] | None = None, explain: bool = True) -> RetrievalResult:
+        queries = [queries] if isinstance(queries, str) else queries
         t0 = time.perf_counter()
-        qvec = self.emb.embed_query(query)
+        qvecs = self.emb._embed([query_prompt(q) for q in queries])  # one batched embedding call
         t1 = time.perf_counter()
-        chunks = self._search(qvec, query, "text", k, prefetch_k, pdf_ids, explain)
+        chunks = self._search(qvecs, queries, "text", k, pdf_ids, explain)
         t2 = time.perf_counter()
-        figures = self._search(qvec, query, "figure", fig_k, prefetch_k, pdf_ids, explain) if fig_k else []
+        figures = self._search(qvecs, queries, "figure", fig_k, pdf_ids, explain) if fig_k else []
         t3 = time.perf_counter()
-        return RetrievalResult(query, chunks, figures, {
+        return RetrievalResult(queries, chunks, figures, {
             "embed": round((t1 - t0) * 1000), "search_text": round((t2 - t1) * 1000),
             "search_figures": round((t3 - t2) * 1000), "total": round((t3 - t0) * 1000),
         })
@@ -101,7 +111,7 @@ class FAARetriever(BaseRetriever):
     """LangChain retriever wrapper (text chunks only) for use in chains."""
 
     searcher: HybridSearcher
-    k: int = 6
+    k: int = 5
 
     model_config = {"arbitrary_types_allowed": True}
 

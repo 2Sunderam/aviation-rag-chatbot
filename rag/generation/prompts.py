@@ -18,10 +18,13 @@ ANSWER_PROMPT = ChatPromptTemplate.from_messages([
     ("human", "SOURCES:\n{context}\n\nQUESTION: {question}"),
 ])
 
-# Conversation is passed as plain text (not chat history) so the model rewrites instead of answering.
-REWRITE_PROMPT = ChatPromptTemplate.from_messages([
-    ("system", "You rewrite follow-up questions into standalone search queries. Do NOT answer the question. "
-               "Resolve pronouns ('it', 'that', 'there') using the conversation. "
-               "Reply with ONE short query line (max 20 words) and nothing else."),
-    ("human", "Conversation:\n{conversation}\n\nFollow-up question: {question}\n\nStandalone search query:"),
+# Query planner. Conversation is passed as plain text so the model plans instead of chatting.
+PLANNER_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", "You plan searches over FAA aviation handbooks. Do NOT answer the question.\n"
+               "Return 1 to 3 standalone search queries:\n"
+               "- Resolve references ('it', 'that', 'there') using the conversation.\n"
+               "- Simple question -> exactly 1 query (the question itself, made standalone).\n"
+               "- Multi-part or comparison question -> one query per part (max 3).\n"
+               "- Keep key terms and acronyms (e.g. VASI, Class B, autorotation). Max 15 words per query."),
+    ("human", "Conversation so far:\n{conversation}\n\nQuestion: {question}"),
 ])

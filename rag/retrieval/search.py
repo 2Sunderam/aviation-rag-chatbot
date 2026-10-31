@@ -18,7 +18,7 @@ def main() -> None:
     a = ap.parse_args()
 
     res = HybridSearcher().search(a.query, k=a.k, fig_k=a.figs, pdf_ids=a.only)
-    print(f"Q: {res.query}\ntimings ms: {res.timings_ms}\n")
+    print(f"Q: {res.queries}\ntimings ms: {res.timings_ms}\n")
     for i, h in enumerate(res.chunks, 1):
         print(f"{i}. rrf={h.rrf_score:.3f} dense#{h.dense_rank} bm25#{h.bm25_rank} | {h.citation} | {h.payload['section'][:40]}")
         print(f"   {h.payload['text'][:160]!r}")
