@@ -2545,7 +2545,6 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-bench = []
 eval = [{ name = "ragas", specifier = ">=0.4.3" }]
 
 [[package]]

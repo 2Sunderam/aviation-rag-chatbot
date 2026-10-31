@@ -21,7 +21,6 @@ dependencies = [
 ]
 
 [dependency-groups]
-bench = []
 eval = [
     "ragas>=0.4.3",
 ]

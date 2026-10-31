@@ -74,7 +74,10 @@ async def run_pipeline(engine: ChatEngine, row: dict, i: int) -> dict:
             "refused": answer.strip().startswith(NOT_FOUND[:25])}
 
 
-async def judge_citations(judge, res: dict) -> list[bool]:
+JUDGE_CONCURRENCY = 2  # Mercury rate-limits per minute (~100 req/min); window clears in ~20 s
+
+
+async def judge_citations(judge, res: dict, sem: asyncio.Semaphore) -> list[bool]:
     """One judge call per answer over all (sentence, cited chunk) pairs."""
     pairs, n = [], 0
     for sent in _SENT.split(res["answer"]):
@@ -87,17 +90,23 @@ async def judge_citations(judge, res: dict) -> list[bool]:
             n += 1
     if not pairs:
         return []
-    try:
-        out: Verdicts = await judge.with_structured_output(Verdicts, method="function_calling").ainvoke(
-            CITE_JUDGE.format(pairs="\n\n".join(pairs)))
-        got = {v.claim_index: v.supported for v in out.verdicts}
-        return [got.get(i, False) for i in range(n)]
-    except Exception as e:
-        print(f"   citation judge failed: {str(e)[:100]}")
-        return []
+    for attempt in range(6):
+        try:
+            async with sem:
+                out: Verdicts = await judge.with_structured_output(Verdicts, method="function_calling").ainvoke(
+                    CITE_JUDGE.format(pairs="\n\n".join(pairs)))
+            got = {v.claim_index: v.supported for v in out.verdicts}
+            return [got.get(i, False) for i in range(n)]
+        except Exception as e:
+            if "429" in str(e) and attempt < 5:
+                await asyncio.sleep(min(30 * (attempt + 1), 90))  # back off past the rate window, then retry
+                continue
+            print(f"   citation judge failed: {str(e)[:100]}")
+            return []
+    return []
 
 
-async def main_async(n: int | None) -> None:
+async def main_async(n: int | None, skip_ragas: bool = False) -> None:
     rows = load_dataset()
     rows = rows[:n] if n else rows
     engine = ChatEngine()
@@ -113,36 +122,42 @@ async def main_async(n: int | None) -> None:
     answered = [x for x in answerable if not x["refused"]]
     unanswerable = [x for x in results if x["row"]["type"] == "unanswerable"]
 
-    print(f"2/3 ragas on {len(answered)} answered questions (judge: mercury-3)...", flush=True)
-    ds = EvaluationDataset.from_list([{
-        "user_input": x["row"]["question"], "response": x["answer"],
-        "retrieved_contexts": [c.payload["text"] for c in x["chunks"]], "reference": x["row"]["reference_answer"],
-    } for x in answered])
-    llm = LangchainLLMWrapper(judge_llm())
-    emb = LangchainEmbeddingsWrapper(GemmaEmbeddings())
-    ragas_res = evaluate(ds, metrics=[Faithfulness(), ResponseRelevancy(), LLMContextPrecisionWithReference(),
-                                      LLMContextRecall()],
-                         llm=llm, embeddings=emb, run_config=RunConfig(max_workers=4, timeout=120),
-                         show_progress=True)
-    df = ragas_res.to_pandas()
-    metric_cols = [c for c in df.columns if c in ("faithfulness", "answer_relevancy", "llm_context_precision_with_reference",
-                                                   "context_recall")]
+    df, metric_cols, faith = None, [], []
+    if not skip_ragas:
+        print(f"2/3 ragas on {len(answered)} answered questions (judge: mercury-3)...", flush=True)
+        ds = EvaluationDataset.from_list([{
+            "user_input": x["row"]["question"], "response": x["answer"],
+            "retrieved_contexts": [c.payload["text"] for c in x["chunks"]], "reference": x["row"]["reference_answer"],
+        } for x in answered])
+        llm = LangchainLLMWrapper(judge_llm())
+        emb = LangchainEmbeddingsWrapper(GemmaEmbeddings())
+        ragas_res = evaluate(ds, metrics=[Faithfulness(), ResponseRelevancy(), LLMContextPrecisionWithReference(),
+                                          LLMContextRecall()],
+                             llm=llm, embeddings=emb, run_config=RunConfig(max_workers=4, timeout=120),
+                             show_progress=True)
+        df = ragas_res.to_pandas()
+        metric_cols = [c for c in df.columns if c in ("faithfulness", "answer_relevancy", "llm_context_precision_with_reference",
+                                                       "context_recall")]
 
     print("3/3 citation judge...", flush=True)
     judge = judge_llm(3000)
-    cite_verdicts = await asyncio.gather(*[judge_citations(judge, x) for x in answered])
+    sem = asyncio.Semaphore(JUDGE_CONCURRENCY)
+    cite_verdicts = await asyncio.gather(*[judge_citations(judge, x, sem) for x in answered])
+    judged_answers = sum(bool(v) for v, x in zip(cite_verdicts, answered) if x["sources"])
 
-    faith = [v for v in df["faithfulness"].tolist() if v == v]  # drop NaN
+    if df is not None:
+        faith = [v for v in df["faithfulness"].tolist() if v == v]  # drop NaN
     all_cites = [v for vs in cite_verdicts for v in vs]
     n_cited = sum(len(x["sources"]) for x in answered)
 
     summary = {
         "n_questions": len(results),
-        "ragas": {c: round(float(df[c].mean()), 3) for c in metric_cols},
+        "ragas": {c: round(float(df[c].mean()), 3) for c in metric_cols} if df is not None else "skipped",
         "hallucination_rate": round(sum(v < 1.0 for v in faith) / len(faith), 3) if faith else None,
         "severe_hallucination_rate": round(sum(v < 0.5 for v in faith) / len(faith), 3) if faith else None,
         "citation_accuracy": round(mean([float(v) for v in all_cites]), 3),
         "citation_pairs_judged": len(all_cites),
+        "answers_citation_judged": f"{judged_answers}/{sum(bool(x['sources']) for x in answered)}",
         "invalid_citation_rate": round(sum(len(x["invalid"]) for x in answered) / max(n_cited + sum(len(x["invalid"]) for x in answered), 1), 3),
         "answers_without_citation": round(sum(not x["sources"] for x in answered) / max(len(answered), 1), 3),
         "unanswerable_correctly_refused": round(mean([float(x["refused"]) for x in unanswerable]), 3) if unanswerable else None,
@@ -152,10 +167,10 @@ async def main_async(n: int | None) -> None:
     md = "\n".join([
         f"# Generation eval ({len(results)} questions, judge: mercury-3)\n",
         "| metric | value | meaning |", "|---|---|---|",
-        *[f"| ragas {k} | {v:.3f} | |" for k, v in summary["ragas"].items()],
+        *([f"| ragas {k} | {v:.3f} | |" for k, v in summary["ragas"].items()] if df is not None else ["| ragas | skipped | |"]),
         f"| hallucination rate | {summary['hallucination_rate']} | answers with >= 1 unsupported claim (faithfulness < 1) |",
         f"| severe hallucination rate | {summary['severe_hallucination_rate']} | faithfulness < 0.5 |",
-        f"| citation accuracy | {summary['citation_accuracy']} | cited chunk supports the sentence ({len(all_cites)} pairs) |",
+        f"| citation accuracy | {summary['citation_accuracy']} | cited chunk supports the sentence ({len(all_cites)} pairs, {summary['answers_citation_judged']} answers) |",
         f"| invalid citation rate | {summary['invalid_citation_rate']} | cited numbers that do not exist |",
         f"| answers without citation | {summary['answers_without_citation']} | |",
         f"| unanswerable correctly refused | {summary['unanswerable_correctly_refused']} | |",
@@ -163,7 +178,8 @@ async def main_async(n: int | None) -> None:
     ])
     per_q = [{"id": x["row"]["id"], "question": x["row"]["question"], "answer": x["answer"], "refused": x["refused"],
               "sources": x["sources"], "invalid": x["invalid"]} for x in results]
-    path = write_result("generation", {"summary": summary, "ragas_rows": df.to_dict(orient="records"),
+    path = write_result("generation" if df is not None else "citations", {"summary": summary,
+                        "ragas_rows": df.to_dict(orient="records") if df is not None else [],
                                        "per_question": per_q}, md)
     print(md)
     print(f"\nsaved {path}")
@@ -172,7 +188,9 @@ async def main_async(n: int | None) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--n", type=int, help="only the first n rows")
-    asyncio.run(main_async(ap.parse_args().n))
+    ap.add_argument("--skip-ragas", action="store_true", help="only citation accuracy + refusals (~3 min)")
+    a = ap.parse_args()
+    asyncio.run(main_async(a.n, a.skip_ragas))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1750 @@
+{
+  "summary": {
+    "n_questions": 100,
+    "ragas": "skipped",
+    "hallucination_rate": null,
+    "severe_hallucination_rate": null,
+    "citation_accuracy": 0.789,
+    "citation_pairs_judged": 370,
+    "answers_citation_judged": "86/87",
+    "invalid_citation_rate": 0.0,
+    "answers_without_citation": 0.0,
+    "unanswerable_correctly_refused": 1.0,
+    "answerable_wrongly_refused": 0.033
+  },
+  "ragas_rows": [],
+  "per_question": [
+    {
+      "id": "single:01_aviation_instructors_handbook_c00066",
+      "question": "What are the observable signs that indicate a learner is experiencing acute fatigue during flight instruction?",
+      "answer": "Acute fatigue during flight instruction is characterized by observable signs including inattention, distractibility, errors in timing, neglect of secondary tasks, loss of accuracy and control, lack of awareness of error accumulation, and irritability [1].\n\nThese signs are apparent to others before the individual notices physical fatigue themselves [1]. A flight instructor familiar with these indicators can detect substandard performance early in a lesson and recognize deterioration [1]. If fatigue occurs as a result of the learning task, the learner should be given a break in instruction and practice [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, pp. 46-47",
+          "id": "2e594d04-66f4-5eaf-8b6e-5160751a946a"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:01_aviation_instructors_handbook_c00014",
+      "question": "What is the purpose of using a Flight Risk Analysis Tool (FRAT) in flight planning?",
+      "answer": "The purpose of using a Flight Risk Analysis Tool (FRAT) in flight planning is to enable proactive hazard identification, provide a visual depiction of risk, and help pilots make better go/no-go decisions [1]. \n\nKey details:\n- A FRAT allows pilots to see the risk profile of a flight during its planning stages [1].\n- It helps pilots differentiate, in advance, between a low-risk flight and a high-risk flight [1].\n- It helps pilots establish a review process and develop risk mitigation strategies [1].\n- When risk exceeds the pilot's acceptable level, associated hazards can be further evaluated and reduced [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, pp. 14-15",
+          "id": "32979eb5-c88d-5d70-bdc2-773db4c7dc59"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:01_aviation_instructors_handbook_c00163",
+      "question": "What three elements make up a performance‑based objective?",
+      "answer": "A performance-based objective consists of three elements: a description of the skill or behavior, the conditions, and the criteria [1][2]. (See Figure 5-4) [F1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, pp. 108-109",
+          "id": "b1411560-f500-5a33-a01d-5d65e409802c"
+        },
+        {
+          "ref": "2",
+          "citation": "Aviation Instructor's Handbook, p. 213",
+          "id": "a3c9f07e-2323-5ecd-a4ea-222aadefbdd0"
+        },
+        {
+          "ref": "F1",
+          "citation": "Aviation Instructor's Handbook, p. 109",
+          "id": "7ce6eb82-1d89-53f7-8bf4-894a5ab803e5"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:01_aviation_instructors_handbook_c00130",
+      "question": "What is the difference between repression and suppression in terms of consciousness?",
+      "answer": "Repression is an unconscious form of forgetting, while suppression is a conscious form. [1]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, pp. 89-90",
+          "id": "fe94968d-bb4a-55bc-bbd3-064921b70da1"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:01_aviation_instructors_handbook_c00084",
+      "question": "How does a negative self-concept affect a learner’s perception and performance?",
+      "answer": "A negative self-concept inhibits perceptual processes by introducing psychological barriers that can prevent the learner from perceiving, and may also inhibit the ability to properly implement what is perceived—affecting the ability to actually perform or do things [1]. Learners who view themselves positively, in contrast, are less defensive and more receptive to new experiences, instructions, and demonstrations [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, p. 59",
+          "id": "1507eb1b-3780-588c-b654-62e79e451496"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:01_aviation_instructors_handbook_c00061",
+      "question": "What is rationalization as described in the aviation instructor handbook?",
+      "answer": "Rationalization is a subconscious technique for justifying actions that otherwise would be unacceptable [1]. When true rationalization takes place, individuals sincerely believe in the plausible and acceptable excuses which seem real and justifiable [1]. For example, a learner mechanic who performs poorly on a test may justify the poor grade by claiming there was not enough time to learn the required information, rather than admitting to failing to join the class study group or taking the computer quiz [1].\n\nAdditionally, the continued use of outmoded instructional procedures or the preparation of learners using obsolete certification requirements usually involves rationalization [2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, pp. 43-44",
+          "id": "0566aa94-4782-5ef8-a151-d6391add1536"
+        },
+        {
+          "ref": "2",
+          "citation": "Aviation Instructor's Handbook, pp. 165-166",
+          "id": "4ea6b390-94ea-5901-9e80-c52971797a29"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:01_aviation_instructors_handbook_c00051",
+      "question": "What method can instructors use to find out why a learner enrolled in a course?",
+      "answer": "Instructors can use a brief personal interview or an information form to determine why a learner enrolled in a course [1]. Asking questions like \"Why are you taking this course?\" or \"How do you plan to use the information you learn in this course?\" may be all that is necessary [1]. A short questionnaire can also help gather additional background information about the learner [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, p. 37",
+          "id": "98c93871-5305-5bb1-a393-ed5eb0647228"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:01_aviation_instructors_handbook_c00258",
+      "question": "What is the definition of safety as described in the handbook?",
+      "answer": "Safety is the freedom from conditions that can cause death, injury, or illness; damage to or loss of equipment or property, or damage to the environment [1]. Absolute safety is not possible because complete freedom from all hazardous conditions is not possible, so safety is a relative term that implies a level of risk that is both perceived and accepted [2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, p. 171",
+          "id": "e948f285-a187-5f95-833a-9f5e371d7d21"
+        },
+        {
+          "ref": "2",
+          "citation": "Aviation Instructor's Handbook, pp. 6-7",
+          "id": "c9f98032-070a-54ac-9d47-481a073405dd"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:02_glider_flying_handbook_c00167",
+      "question": "How do the bubble model and the column model differ in describing the structure of a thermal?",
+      "answer": "The bubble model describes a thermal as an individual vortex ring with rising air in the middle and descending air on the sides, where the middle air rises faster than the entire bubble (see Figure 9-6) [F1]. The column or plume model describes a thermal as a continuous column, with surrounding warm air flowing into the void left by the initial thermal, creating a plume (see Figure 9-7) [F2].\n\nKey differences:\n- The bubble model fits occasional reports, but the column model is more common, as gliders can contact the same thermal even when vertically displaced by 1,000 feet or more [1].\n- A column may contain several embedded bubbles, which may merge or exist side by side [1].\n- The applicability may depend on the supply of warm air near the surface: a small heated area may produce a single bubble, while a large warm area may produce a column [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "F1",
+          "citation": "Glider Flying Handbook, p. 172",
+          "id": "80b4a6ba-ba98-5db3-8dd0-5cc38ddd890f"
+        },
+        {
+          "ref": "F2",
+          "citation": "Glider Flying Handbook, p. 172",
+          "id": "9cf64726-e04a-5da0-b756-bc2ea70522f7"
+        },
+        {
+          "ref": "1",
+          "citation": "Glider Flying Handbook, pp. 171-173",
+          "id": "f7fc7ca3-790a-567d-ab33-34749a5dc2bb"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:02_glider_flying_handbook_c00057",
+      "question": "What is the weight of one gallon of water used as trim ballast in a glider?",
+      "answer": "One gallon of water weighs 8.35 pounds when used as trim ballast in a glider [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Glider Flying Handbook, p. 77",
+          "id": "012715b4-6017-5b73-9356-a1b4054e7756"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:02_glider_flying_handbook_c00213",
+      "question": "In strong winds, why does a glider pilot fly faster than minimum sink speed?",
+      "answer": "In strong winds, a glider pilot flies faster than minimum sink speed to maintain position in the best lift. Flying slower would allow the glider to drift downwind (fly backward over the ground) and into the downside of the wave, making it difficult to return to the upwind side [3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "3",
+          "citation": "Glider Flying Handbook, pp. 217-218",
+          "id": "ee1ec882-c777-5517-8e8a-6d2eed1a9346"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:02_glider_flying_handbook_c00193",
+      "question": "What action should a glider pilot take when approaching a cloud from the downwind side in light wind conditions?",
+      "answer": "When approaching a cloud from the downwind side in light wind conditions, the pilot should head for the darkest, best-defined part of the cloud base, then continue directly into the wind, expecting to find the lift forming the cloud about the time the glider passes upwind of the cloud [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Glider Flying Handbook, pp. 195-196",
+          "id": "6a4c6942-2a20-5866-8e3a-414086d20ac1"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:02_glider_flying_handbook_c00209",
+      "question": "What should a pilot inspect regarding control fittings before a high‑altitude glider flight?",
+      "answer": "The pilot should check the lubricant used on control fittings, as some lubricants get stiff when cold [4].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "4",
+          "citation": "Glider Flying Handbook, pp. 213-214",
+          "id": "a347ac09-2393-55dc-beb7-af277704d7ae"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:02_glider_flying_handbook_c00162",
+      "question": "What is the formula for the ideal gas law as applied to dry air, and what does each variable represent?",
+      "answer": "The ideal gas law as applied to dry air is **P/DT = R**, where P is pressure, D is density, T is temperature, and R is a constant [1][2]. \n\nKey details:\n- Dry air behaves almost like an ideal gas, meaning it obeys this law [1][2].\n- In general, the density, pressure, and temperature of an air parcel change predictably according to the variables in the formula [1][2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Glider Flying Handbook, pp. 168-169",
+          "id": "aefdb6db-ae56-5bf1-8503-400435d4f54f"
+        },
+        {
+          "ref": "2",
+          "citation": "Glider Flying Handbook, pp. 167-168",
+          "id": "0e1c9e26-1d89-5ac2-9eaf-a51cc5051971"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:02_glider_flying_handbook_c00125",
+      "question": "In a crossed-control stall, why does applying excessive rudder on the inside of a turn cause the pilot to apply opposite aileron pressure?",
+      "answer": "In a crossed-control stall, applying excessive rudder pressure on the inside of the turn causes the speed of the outer wing to increase, creating greater lift on that wing. To keep that wing from rising and to maintain a constant angle of bank, the pilot applies opposite aileron pressure [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Glider Flying Handbook, pp. 138-139",
+          "id": "09ef6e70-3af0-5742-bb5e-6a28e139b543"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:02_glider_flying_handbook_c00064",
+      "question": "When a tow line's breaking strength exceeds twice the glider's maximum certificated operating weight, what are the specific breaking strength requirements for the two safety/weak links that must be installed?",
+      "answer": "When a tow line's breaking strength exceeds twice the glider's maximum certificated operating weight, two safety/weak links must be installed [1]:\n\n- **Weak link near the glider:** Must have a breaking strength within 80 to 200 percent of the glider's maximum certificated operating weight [1].\n- **Weak link near the tow plane:** Must have a breaking strength greater than, but not more than 25 percent greater than, the weak link at the glider end, and not more than twice the glider's maximum certificated operating weight [1] (see Figure 6-12) [F1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Glider Flying Handbook, pp. 83-85",
+          "id": "3128e745-42ea-5d65-b1bd-e0dccc65147c"
+        },
+        {
+          "ref": "F1",
+          "citation": "Glider Flying Handbook, p. 86",
+          "id": "d36dd465-4b24-5346-8759-b65cf4b2fde0"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:03_weight_shift_control_handbook_c00099",
+      "question": "When setting up a weight-shift control aircraft wing, how far out from the root should the initial battens be inserted, and which battens are intentionally left for later?",
+      "answer": "Battens should be inserted about 3/4 of the way out from the root on each side, and the tip battens are intentionally left for later [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 97-99",
+          "id": "153a82ff-83bd-54d2-9056-e8e89f20c81f"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:03_weight_shift_control_handbook_c00255",
+      "question": "What is the recommended immediate action if a weight-shift control aircraft experiences a severe porpoising situation during landing?",
+      "answer": "The recommended immediate action is to execute a go-around by applying full power while maintaining directional control and lowering the nose to a safe climb attitude [1]. No attempt should be made to salvage the landing [1]. Pilot attempts to correct a severe porpoise with flight control and power inputs are likely to be untimely and out of sequence with the oscillations, making the situation worse [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, p. 221",
+          "id": "45325eaa-4efc-5c09-8237-8ab21ed86f7d"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:03_weight_shift_control_handbook_c00205",
+      "question": "When performing a turn around a point, how does the required bank angle differ between the downwind and upwind halves of the circle, and why?",
+      "answer": "The bank angle is steeper on the downwind half of the circle and shallower on the upwind half [1][2][3][4]. \n\n- **Downwind half:** The aircraft's nose is progressively turned toward the inside of the circle [1][2][3]. The groundspeed is greatest here, so a steeper bank and faster rate of turn are required to establish the proper wind correction angle [4].\n- **Upwind half:** The nose is progressively turned toward the outside [1][2][3]. Groundspeed is least, so a shallower bank and slower rate of turn are needed [4].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 180-182",
+          "id": "a28ebbd6-f49a-5dec-9283-063d74c04525"
+        },
+        {
+          "ref": "2",
+          "citation": "Rotorcraft Flying Handbook, p. 182",
+          "id": "da9efae2-99d3-51ce-b986-1da0725500eb"
+        },
+        {
+          "ref": "3",
+          "citation": "Rotorcraft Flying Handbook, pp. 84-85",
+          "id": "6bc18e59-8045-5e75-addb-f26074643bda"
+        },
+        {
+          "ref": "4",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 179-180",
+          "id": "4f696acc-81d1-5881-b317-52bd3e3b0a6c"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:03_weight_shift_control_handbook_c00170",
+      "question": "Why might a weight-shift control aircraft that lifts off below its recommended takeoff speed struggle to climb out of ground effect, and what is the only way to compensate during the initial climb?",
+      "answer": "A WSC aircraft that lifts off below its recommended takeoff speed struggles to climb out of ground effect because the increased drag encountered when leaving ground effect requires additional power, but the engine is already developing maximum power during the initial climb [1]. \n\nThe only way to compensate is to lower the pitch attitude to gain additional airspeed, which results in inevitable altitude loss [1]. If the aircraft becomes airborne with insufficient airspeed at high density altitude, high temperature, or maximum gross weight, it may be unable to climb out of ground effect and could settle back on the runway or fail to clear obstructions [1][8].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 149-150",
+          "id": "b53fbca8-e5db-5057-bed4-701953d012b5"
+        },
+        {
+          "ref": "8",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 108-109",
+          "id": "a1117cbd-228c-5d63-b2b1-2f88724c9ab8"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:03_weight_shift_control_handbook_c00096",
+      "question": "Why are wide straps recommended over thin ropes for securing the wing during transport?",
+      "answer": "Wide straps are recommended because they create less concentrated pressure on the wing at each tie-down point than thin ropes do [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 95-96",
+          "id": "8ca16f88-7cf9-5cfd-8ca8-0ef8906fb55f"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:03_weight_shift_control_handbook_c00132",
+      "question": "How does a pilot initiate exiting a turn in a weight‑shift control aircraft?",
+      "answer": "A pilot exits a turn by shifting weight to the opposite side to initiate the exit, then moving the control bar back to the center position to establish and maintain straight flight [1].\n\n- To exit: shift weight to the opposite side of the turn [1].\n- Once straight flight is established, move the control bar back to center [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 123-124",
+          "id": "3476d0b3-71e8-5284-95b8-407b9d5fc689"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:03_weight_shift_control_handbook_c00203",
+      "question": "What bank angle strategy should be used when crossing a road at a right angle during an S‑turn?",
+      "answer": "The bank angle strategy depends on whether you are on the downwind or upwind side of the road:\n\n- When starting the turn on the downwind side (heading directly downwind), use the **steepest bank** immediately after crossing the road, because groundspeed is greatest. [2][3][4][5]\n- Gradually **shallow the bank** as the turn progresses from downwind to upwind. [2][3]\n- When starting the turn on the upwind side, use a **relatively shallow bank** and then gradually **steepen it** as the aircraft turns from upwind to downwind. [1][2][3]\n- The steepest bank in the second half of the S-turn should be attained just prior to rollout when approaching the reference line nearest the downwind heading. [4][5]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "2",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 177-178",
+          "id": "dc2eec96-8719-551a-9f83-f1355193c1e2"
+        },
+        {
+          "ref": "3",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 178-179",
+          "id": "588e3586-2e09-5748-82c5-3060839652ed"
+        },
+        {
+          "ref": "4",
+          "citation": "Rotorcraft Flying Handbook, p. 181",
+          "id": "891e75b3-b6a8-52b9-a16a-65b3e9dfe5a6"
+        },
+        {
+          "ref": "5",
+          "citation": "Helicopter Flying Handbook, pp. 119-120",
+          "id": "9e5fae2e-5484-5876-8dcb-2472caa6c729"
+        },
+        {
+          "ref": "1",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, p. 179",
+          "id": "a8442bf6-1a10-5f87-95eb-3c00d2b717d2"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:03_weight_shift_control_handbook_c00060",
+      "question": "When is a Mode C transponder required for a weight‑shift control aircraft?",
+      "answer": "A Mode C transponder is required for a weight-shift control aircraft when entering Class C airspace by contacting the control tower and establishing communications [5]. \n\nAircraft can enter Class C airspace without a transponder if prior permission from ATC is received 1 hour before entry, per 14 CFR section 91.215(d)(3) [5]. The transponder requirement applies only when flying into Class C airspace, not when flying under the Class C upper tier of airspace [5].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "5",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 162-163",
+          "id": "b819c714-022d-579b-ae55-49d24a991c56"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:04_instrument_procedures_handbook_c00318",
+      "question": "What is the difference between a fly‑over fix and a fly‑by fix in terms of how a turn is executed?",
+      "answer": "A fly-over fix requires the aircraft to pass directly over the fix before initiating a turn to a new course [1]. A fly-by fix allows the aircraft's navigation system to use turn anticipation, commanding the proper turn radius to avoid overshooting the new course [1].\n\nKey details:\n\n- Some RNAV systems are not programmed to fully use the turn anticipation feature for fly-by fixes [1].\n- A fix can be coded as both fly-over and fly-by in the same procedure, depending on how it is used (e.g., holding at an initial approach fix) [1].\n- Chart symbology for fly-by waypoints provides pilot awareness of expected actions [1]. (See Figure 6-4) [F3].\n- Fly-by waypoints are represented by four-pointed stars; fly-over waypoints are shown as a four-pointed star enclosed in a circle [7]. (See Figure 1-31) [F1].\n- Pilots should not change any database waypoint type from fly-by to fly-over, or vice versa [7].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Procedures Handbook, pp. 254-255",
+          "id": "f493a0b9-c3b3-52da-8e57-cc9956427ac5"
+        },
+        {
+          "ref": "F3",
+          "citation": "Instrument Procedures Handbook, p. 255",
+          "id": "aba93d37-14e6-541f-ab42-05e09d79cbcd"
+        },
+        {
+          "ref": "7",
+          "citation": "Instrument Procedures Handbook, p. 52",
+          "id": "52a56650-40c4-5b5b-9146-172d50100323"
+        },
+        {
+          "ref": "F1",
+          "citation": "Instrument Procedures Handbook, p. 52",
+          "id": "ce8f641a-5a1c-5338-a979-83fd283f5aba"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:04_instrument_procedures_handbook_c00078",
+      "question": "Which airspace levels and ARTCCs are covered by the HAR Phase I expansion airspace?",
+      "answer": "The HAR Phase I expansion airspace is defined as airspace at and above FL 350 in fourteen western and southern ARTCCs [1]. These include Minneapolis (ZMP), Chicago (ZAU), Kansas City (ZKC), Denver (ZDV), Salt Lake City (ZLC), Oakland (ZOA), Seattle (ZSE), Los Angeles (ZLA), Albuquerque (ZAB), Fort Worth (ZFW), Memphis (ZME), and Houston (ZHU), with Jacksonville (ZJX) and Miami (ZMA) included for east-west routes only [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Procedures Handbook, p. 67",
+          "id": "3046fa19-0891-5aee-a09d-3e2a699054e5"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:04_instrument_procedures_handbook_c00223",
+      "question": "Which documents hold the authorization to use VNAV on a conventional non‑precision approach?",
+      "answer": "The authorization to use VNAV on a conventional non-precision approach is found in the operator’s OpSpecs, AFM, or other FAA-approved documents [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Procedures Handbook, pp. 170-171",
+          "id": "decf8fd3-3a55-57eb-9725-220281a3f7e8"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:04_instrument_procedures_handbook_c00053",
+      "question": "Which FAA flight plan suffix is used for an aircraft that has a transponder but does not have Mode C capability?",
+      "answer": "The FAA flight plan suffix for an aircraft with a transponder but no Mode C capability is **/T** [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Procedures Handbook, pp. 46-47",
+          "id": "700ddf23-0b03-5c90-aaf5-ebd964644db9"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:04_instrument_procedures_handbook_c00326",
+      "question": "What operational issue can arise when a pilot uses RNAV equipment that lacks the fly-over capability?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "single:04_instrument_procedures_handbook_c00174",
+      "question": "What are the five steps commonly included in the in‑flight planning phase of an instrument approach?",
+      "answer": "The five steps commonly included in the in-flight planning phase of an instrument approach are [1]:\n\n- Gathering weather information, field conditions, and Notices to Airmen (NOTAMs) for the airport of intended landing [1]\n- Calculation of performance data, approach speeds, and thrust/power settings [1]\n- Flight deck navigation/communication and automation setup [1]\n- Instrument approach procedure (IAP) review and, for flight crews, IAP briefing [1]\n- Operational review and, for flight crews, operational briefing [1]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Procedures Handbook, p. 142",
+          "id": "30bca957-5ff9-55c8-a9e0-4268376d7979"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:04_instrument_procedures_handbook_c00370",
+      "question": "Under what conditions may an escort aircraft execute an in‑flight join during emergency conditions?",
+      "answer": "An escort aircraft may execute an in-flight join during emergency conditions only if both crews involved are familiar with and capable of formation flight, and can communicate and have visual contact with each other [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Procedures Handbook, pp. 292-294",
+          "id": "c9188438-17a2-527a-8b11-76298d84c300"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:05_instrument_flying_handbook_c00169",
+      "question": "What are the two basic methods used to learn attitude instrument flying?",
+      "answer": "The two basic methods are \"control and performance\" and \"primary and supporting.\" [1][3]\n\n- Both methods use the same instruments and responses for attitude control, but differ in their reliance on the attitude indicator and interpretation of other instruments. [3]\n- The control and performance method involves controlling aircraft attitude and power to achieve controlled, stabilized flight without a visible horizon. [1]\n- The primary and supporting method identifies which instruments give the most pertinent information for a given maneuver (primary) and uses the rest to help maintain those indications (supporting). [4]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Flying Handbook, p. 135",
+          "id": "8dc1ad97-347d-5a96-8836-b62d6b013e7f"
+        },
+        {
+          "ref": "3",
+          "citation": "Instrument Flying Handbook, pp. 149-151",
+          "id": "6dd0ec14-29c8-5a84-800d-05e37353a566"
+        },
+        {
+          "ref": "4",
+          "citation": "Instrument Flying Handbook, pp. 143-144",
+          "id": "f1625c78-dbd4-54cf-acb1-0199f8ac9d97"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:05_instrument_flying_handbook_c00052",
+      "question": "If an IFR clearance includes a void time of 10 minutes past the hour, when must the aircraft be airborne to keep the clearance valid?",
+      "answer": "The aircraft must be airborne **prior to** the void time, not at or after it. If the void time is 10 minutes past the hour, the aircraft must take off before 10 minutes past the hour. [2]\n\nKey details:\n- A clearance void time means the clearance is automatically canceled if takeoff has not occurred by that time. [5]\n- If the aircraft is airborne at exactly the void time (e.g., exactly 10 minutes past the hour), the clearance is void. [2]\n- If the pilot fails to depart before the void time, they must contact ATC by a specified notification time (within 30 minutes of the original void time) to receive a new clearance. [1]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "2",
+          "citation": "Instrument Flying Handbook, pp. 55-56",
+          "id": "0816dbb9-0c55-5f77-8e50-a9dce0215a96"
+        },
+        {
+          "ref": "5",
+          "citation": "Instrument Flying Handbook, pp. 349-350",
+          "id": "4bb7379b-2631-5b4b-b06b-85a406846e4e"
+        },
+        {
+          "ref": "1",
+          "citation": "Instrument Procedures Handbook, pp. 59-60",
+          "id": "43a3a069-0d8a-5e97-86af-9b17d4868d15"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:05_instrument_flying_handbook_c00138",
+      "question": "How does a flight director present steering commands to the pilot on the ADI?",
+      "answer": "A flight director presents steering commands to the pilot on the ADI through one of two display systems: a set of command bars (one horizontal and one vertical) or a miniature aircraft aligned to a command cue [1]. The pilot flies the aircraft to place the delta symbol in the V of the steering bars [1]. A third presentation, used in some systems, is a \"three cue\" system that also provides collective control cues [3].\n\nKey details:\n- Command bars indicate the direction and amount of attitude change needed to achieve the desired result [1].\n- The yellow cue on the ADI provides all steering commands, driven by a computer that processes navigation, ADC, AHRS, and other data [1].\n- Other FDs may use a \"two cue\" presentation known as a \"cross pointer system,\" which provides only attitude information [3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Flying Handbook, pp. 118-119",
+          "id": "51d3ae6a-d8a3-5c8d-bce5-9f64acaa67ee"
+        },
+        {
+          "ref": "3",
+          "citation": "Instrument Procedures Handbook, p. 271",
+          "id": "a7be9f32-a189-552c-8050-a9ae47da8588"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:05_instrument_flying_handbook_c00063",
+      "question": "What is the minimum and maximum separation distance between parallel runways for which the Precision Runway Monitor can be used?",
+      "answer": "The Precision Runway Monitor (PRM) can be used for parallel runways with centerlines separated by less than 4,300 feet but not less than 3,000 feet under most conditions [3]. \n\n- Minimum separation: 3,000 feet (under most conditions) [3].\n- Maximum separation: less than 4,300 feet [3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "3",
+          "citation": "Instrument Flying Handbook, pp. 63-64",
+          "id": "445bfb63-d255-5605-a541-062693465b00"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:05_instrument_flying_handbook_c00224",
+      "question": "Which flight instruments reveal a nose‑high attitude?",
+      "answer": "The altimeter, vertical speed indicator, airspeed indicator, and attitude indicator reveal a nose-high attitude [1]. Nose-high attitudes are shown by the rate and direction of movement of the altimeter needle, vertical speed needle, and airspeed needle, as well as the immediately recognizable indication of the attitude indicator (except in extreme attitudes) [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Flying Handbook, pp. 188-189",
+          "id": "c92baca7-bf44-5b99-b0ec-342891b8abed"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:05_instrument_flying_handbook_c00163",
+      "question": "What are the two fundamental flight skills that must be developed during attitude instrument training, and what do they result in?",
+      "answer": "The two fundamental flight skills that must be developed during attitude instrument training are instrument cross-check and instrument interpretation, and they result in positive aircraft control [1][4].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Flying Handbook, pp. 143-144",
+          "id": "f1625c78-dbd4-54cf-acb1-0199f8ac9d97"
+        },
+        {
+          "ref": "4",
+          "citation": "Instrument Flying Handbook, p. 143",
+          "id": "d406f040-9f57-555f-af58-a694f47dc673"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:05_instrument_flying_handbook_c00265",
+      "question": "At what pitch-up angle does the horizon line on an EFD's attitude indicator begin moving downward, and what remains visible to guide the pilot back to level pitch?",
+      "answer": "The horizon line starts moving downward at approximately 47° pitch up. [2] From this point on, the brown segment remains visible to show the pilot the quickest way to return to the level pitch attitude. [2]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "2",
+          "citation": "Instrument Flying Handbook, pp. 216-217",
+          "id": "f3170bd7-7dad-507e-8341-d3689973f8d2"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:06_helicopter_flying_handbook_c00078",
+      "question": "How does a helicopter's force trim system work to hold the cyclic control in a set position, and what components does it rely on?",
+      "answer": "The force trim system holds the cyclic control in a set position using a magnetic clutch and springs [2][4]. It is a passive system that does not use sensor-based data to make corrections [2].\n\nKey details:\n- The magnetic clutch and springs hold the cyclic in the position where it was released [2][4].\n- The pilot can override the system by using a force trim release button or by physically manipulating the controls with greater resistance [2].\n- Some recent basic versions are referred to as attitude retention systems [2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "2",
+          "citation": "Helicopter Flying Handbook, pp. 73-74",
+          "id": "ae188563-3b4c-5f75-bacb-f18b8e13ffb1"
+        },
+        {
+          "ref": "4",
+          "citation": "Rotorcraft Flying Handbook, p. 47",
+          "id": "8b8ed4f1-a839-502f-a39e-756eeada364c"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:06_helicopter_flying_handbook_c00210",
+      "question": "How does using a high power setting influence the turbulence affecting the tail rotor?",
+      "answer": "A high-power setting, which means a large main rotor pitch angle, induces considerable main rotor blade downwash and hence more turbulence than when the helicopter is in a low power condition [1][2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Helicopter Flying Handbook, pp. 155-156",
+          "id": "b30f435c-671f-5fee-a5c4-3bec7a85a3eb"
+        },
+        {
+          "ref": "2",
+          "citation": "Helicopter Flying Handbook, pp. 154-155",
+          "id": "9c129472-f727-5f09-98d9-01866bee8c7d"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:06_helicopter_flying_handbook_c00204",
+      "question": "What immediate action should a pilot take if the tail rotor fails while the helicopter is hovering?",
+      "answer": "If the tail rotor fails while the helicopter is hovering, the pilot should enter a hovering autorotation by rolling off the throttle [1][3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Helicopter Flying Handbook, pp. 152-153",
+          "id": "0fad9539-fc56-5123-aa5e-79a279f60f16"
+        },
+        {
+          "ref": "3",
+          "citation": "Rotorcraft Flying Handbook, p. 108",
+          "id": "7ac46f57-920a-50dc-aac4-645b62c89771"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:06_helicopter_flying_handbook_c00193",
+      "question": "What condition must be exceeded for dynamic rollover to become unrecoverable, making cyclic control ineffective?",
+      "answer": "The critical rollover angle must be exceeded for dynamic rollover to become unrecoverable, making cyclic control ineffective [1][2]. Beyond this point, main rotor thrust continues the roll and recovery is impossible, regardless of cyclic corrections made [1][2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Rotorcraft Flying Handbook, pp. 104-105",
+          "id": "0a4964dd-50fb-52fd-8696-9b855288e8ab"
+        },
+        {
+          "ref": "2",
+          "citation": "Helicopter Flying Handbook, pp. 147-148",
+          "id": "9f411a49-c704-5c81-b9ab-ba3d779cc986"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:06_helicopter_flying_handbook_c00022",
+      "question": "What causes the vertical component of wind passing a rotor blade?",
+      "answer": "The vertical component of wind passing a rotor blade is caused by the air being forced down through the rotor blades plus any movement of the air relative to the blades caused by the helicopter climbing or descending [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Helicopter Flying Handbook, pp. 31-33",
+          "id": "fa88dd49-541d-5cfc-b409-b5748fb5698e"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:06_helicopter_flying_handbook_c00180",
+      "question": "How does a high density altitude affect a helicopter’s performance during an autorotation?",
+      "answer": "High density altitude reduces helicopter performance during autorotation by reducing lift potential, which requires a higher collective pitch angle to cushion the landing [2]. It also results in a higher rate of descent, reduced rotor rpm build, lower initial rotor rpm response, and the need for a higher flare height [5]. Additionally, high density altitude limits the validity of the height/velocity diagram, which is operational only up to a maximum gross weight for that density altitude [3][4].\n\nKey effects:\n- Higher rate of descent [5]\n- Reduced rotor rpm build in autorotation [5]\n- Low initial rotor rpm response [5]\n- Requirement for a higher flare height [5]\n- Reduced engine power performance [5]\n- Increased density altitude reduces lift potential, necessitating higher collective pitch angle [2]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "2",
+          "citation": "Helicopter Flying Handbook, p. 92",
+          "id": "3bbd7912-0d82-5ce7-bbba-e2b362fc2642"
+        },
+        {
+          "ref": "5",
+          "citation": "Helicopter Flying Handbook, p. 143",
+          "id": "c329d3f9-e0d8-5567-8cca-01e84826ea44"
+        },
+        {
+          "ref": "3",
+          "citation": "Helicopter Flying Handbook, pp. 91-92",
+          "id": "a7329a3e-9b19-5dff-b256-11c49b4519f6"
+        },
+        {
+          "ref": "4",
+          "citation": "Rotorcraft Flying Handbook, p. 102",
+          "id": "21bfafe7-d119-5e83-9aca-a63c7b8451c4"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:06_helicopter_flying_handbook_c00190",
+      "question": "What is the main goal of the Vuichard Recovery technique for vortex ring state?",
+      "answer": "The main goal of the Vuichard Recovery technique is to eliminate the descent rate as opposed to exiting the vortex [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Helicopter Flying Handbook, p. 146",
+          "id": "3dfe0c59-abdf-5626-83af-c31e8c95f335"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:07_rotorcraft_flying_handbook_c00077",
+      "question": "Which regulation provides a simple method for deferring maintenance on rotorcraft operating under part 91?",
+      "answer": "The deferral provision of 14 CFR part 91, section 91.213(d) provides a simple method for deferring maintenance on rotorcraft operating under part 91. [1][2][4] It is widely used due to its simplicity and minimal paperwork. [1][2][4]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Rotorcraft Flying Handbook, p. 68",
+          "id": "cae371ea-dbbb-5a9f-a328-271b98bad454"
+        },
+        {
+          "ref": "2",
+          "citation": "Helicopter Flying Handbook, p. 100",
+          "id": "90eadec5-bc0a-528d-a2f5-1b02dafaaf98"
+        },
+        {
+          "ref": "4",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 239-240",
+          "id": "7b5611dc-d1e7-51e1-950c-c20635d947e7"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:07_rotorcraft_flying_handbook_c00291",
+      "question": "In the Rotorcraft Flying Handbook, which chapter covers the topic of autorotation, and what are the specific subtopics listed under it?",
+      "answer": "The chapter covering autorotation in the Rotorcraft Flying Handbook is Chapter 11, with specific subtopics including aerodynamics, autorotation from a hover, power recovery, straight-in autorotations, and autorotations with turns [6].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "6",
+          "citation": "Rotorcraft Flying Handbook, pp. 202-203",
+          "id": "35e3a7e7-8846-5d8b-965d-225cabdf4f48"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:07_rotorcraft_flying_handbook_c00267",
+      "question": "What is the term used for flying a gyroplane at speeds slower than the minimum power required speed, and why does this condition limit further airspeed reduction?",
+      "answer": "The term used for flying a gyroplane at speeds slower than the minimum power required speed is the \"backside of the power curve\" or flying \"behind the power curve\" [1].\n\nThis condition limits further airspeed reduction because at these speeds, as pitch is increased to slow the gyroplane, more and more power is required to maintain level flight [1]. At the point where maximum power available is being used, no further reduction in airspeed is possible without initiating a descent [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Rotorcraft Flying Handbook, pp. 182-183",
+          "id": "8dd6e74c-f261-5273-9d10-bf3063152b96"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:07_rotorcraft_flying_handbook_c00185",
+      "question": "During a stabilized constant-rate helicopter climb, which flight instrument becomes the primary reference for pitch once the vertical speed reaches the target rate?",
+      "answer": "The vertical speed indicator (VSI) becomes the primary reference for pitch once the vertical speed reaches the target rate during a stabilized constant-rate climb [1][4]. \n\nKey details:\n- The airspeed indicator is primary for pitch until the VSI approaches the desired rate [1][4].\n- When the VSI becomes primary for pitch, the airspeed indicator becomes primary for power [1][4].\n- Pitch and power corrections should be closely coordinated; for example, if vertical speed is correct but airspeed is low, add power [1][5].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Rotorcraft Flying Handbook, pp. 126-127",
+          "id": "fcdbbf7f-8682-549b-b1a9-bfd858eba930"
+        },
+        {
+          "ref": "4",
+          "citation": "Rotorcraft Flying Handbook, pp. 127-128",
+          "id": "fcc13855-4f03-53b0-9b23-185205cbe27e"
+        },
+        {
+          "ref": "5",
+          "citation": "Instrument Flying Handbook, pp. 175-177",
+          "id": "0b4450e8-9781-5ec0-9cff-06042cbd866f"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:07_rotorcraft_flying_handbook_c00198",
+      "question": "When trying to see a dim object at night, how many degrees off-center should a pilot look to use the rod receptors instead of the cone-rich fovea?",
+      "answer": "A pilot should look 5° to 10° off-center of the object to use the rod receptors instead of the cone-rich fovea [1][2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 444-445",
+          "id": "021aea26-b7b1-5e62-abd6-7441dc39373e"
+        },
+        {
+          "ref": "2",
+          "citation": "Rotorcraft Flying Handbook, pp. 134-135",
+          "id": "638e9177-54e5-5125-8cb9-b64d6043dc50"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:07_rotorcraft_flying_handbook_c00162",
+      "question": "How can a pilot approximate the magnetic course to an alternate airport using a VOR station on a sectional chart?",
+      "answer": "A pilot can approximate the magnetic course to an alternate airport using a VOR station and a straightedge, aligning it with the compass rose depicted around the VOR station on the sectional chart [2][4]. This approximation can be based on a radial from a nearby VOR or an airway that closely parallels the course to the alternate [2][4].\n\nKey details:\n- The magnetic heading associated with a VOR radial or printed airway is outbound from the station; to find the course TO the station, the pilot may need to determine the reciprocal of that heading [2][4].\n- It is typically easier to navigate to an alternate airport that has a VOR or NDB facility on the field [2][4].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "2",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 421-422",
+          "id": "9a8007fa-f7fb-5bea-9f60-a0774cb4e0f5"
+        },
+        {
+          "ref": "4",
+          "citation": "Rotorcraft Flying Handbook, p. 112",
+          "id": "e5143d7f-8fc8-52dc-8c9f-11672fbfb287"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:07_rotorcraft_flying_handbook_c00064",
+      "question": "When using the loading chart, does a total weight of 1,580 lb (point C) fall within the helicopter's allowable weight and CG limits?",
+      "answer": "Yes, a total weight of 1,580 lb (point C) falls within the helicopter's allowable weight and CG limits [1]. Point C is within allowable weight and CG limits [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Rotorcraft Flying Handbook, p. 58",
+          "id": "764119b4-5c4b-5584-8e20-5e5e3f23d0bd"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:08_pilots_handbook_aeronautical_knowledge_c00039",
+      "question": "Who administers the FAA practical tests for pilot certificates?",
+      "answer": "FAA practical tests are administered by FAA Air Safety Inspectors (ASIs) and Designated Pilot Examiners (DPEs) [4]. DPEs are private individuals delegated by the FAA to administer these tests [1].\n\nKey details:\n- Most practical tests at private and commercial pilot levels are administered by DPEs [5].\n- DPEs are appointed under 14 CFR part 183, section 183.23, and must meet qualifications in the Pilot Examiner's Handbook, FAA Order 8710.3 [1].\n- DPEs may charge a reasonable fee for tests since they serve without government pay; there is no charge when an FAA inspector conducts the test [2].\n- DPEs must administer tests with the same professionalism, methods, procedures, and standards as an FAA ASI [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "4",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 37-38",
+          "id": "df89e932-a3df-54cb-8640-758b3e965e98"
+        },
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, p. 39",
+          "id": "b1cf9265-46e7-5891-8c6a-08970071da40"
+        },
+        {
+          "ref": "5",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 39-40",
+          "id": "87e02aec-9457-5822-9174-9e20c5b20ecb"
+        },
+        {
+          "ref": "2",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, p. 38",
+          "id": "e285b743-9fb6-5837-9c75-57a943dbb7bc"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:08_pilots_handbook_aeronautical_knowledge_c00379",
+      "question": "How is the moment of an object on an aircraft calculated?",
+      "answer": "The moment of an object on an aircraft is calculated by multiplying the weight of the object by its arm (the distance from the datum to the object) [1][3]. The result is expressed in inch-pounds (in-lb) [2][3].\n\nKey details:\n- The arm is measured from the datum; distances aft of the datum are positive, and distances forward of the datum are negative [1][3].\n- For example, a 50-pound weight placed 100 inches from the datum produces a moment of 5,000 in-lb (50 × 100 = 5,000) (see Figure 10-3) [3].\n- The moment represents the tendency of the weight to rotate about a point or axis [1][3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Rotorcraft Flying Handbook, pp. 56-57",
+          "id": "6222aa26-cef6-5c6b-bd52-84716001ebd5"
+        },
+        {
+          "ref": "3",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 249-250",
+          "id": "5f946090-d3d0-5f89-9843-ddd996481c48"
+        },
+        {
+          "ref": "2",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 110-111",
+          "id": "db8a3644-9355-5588-b9a2-90204a2de410"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:08_pilots_handbook_aeronautical_knowledge_c00480",
+      "question": "How must wind be encoded in a pilot weather report?",
+      "answer": "Wind must be encoded in the report with the direction first, followed by speed, using groups like `14021KT`. \n\nKey points:\n- The first three digits indicate the direction the wind is blowing from, in tens of degrees relative to true north (e.g., `140` = 140°). [1][4]\n- The last two digits (or three if over 99 knots) indicate wind speed in knots, always followed by `KT`. [1][4]\n- If winds are gusting, the letter `G` follows the wind speed, with the peak gust after it (e.g., `G26KT`). [1]\n- If the wind direction varies by more than 60° and speed is greater than 6 knots, a separate group separated by a `V` shows the extremes (e.g., `180V250`). [1][4]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, p. 316",
+          "id": "7b3014a6-60e2-5415-8b53-13cc47d45d6d"
+        },
+        {
+          "ref": "4",
+          "citation": "Aviation Weather Handbook, pp. 293-294",
+          "id": "f96722e1-59fa-5a51-90c1-615a96b5ce2a"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:08_pilots_handbook_aeronautical_knowledge_c00325",
+      "question": "What happens to the airspeed indicator when both the pitot tube opening and its drain hole are simultaneously clogged?",
+      "answer": "When both the pitot tube opening and its drain hole are clogged simultaneously, the pressure inside the pitot tube becomes trapped [1]. As a result, no change is noted on the airspeed indication if airspeed increases or decreases [1]. \n\n- If the static port remains unblocked and the aircraft changes altitude, a change is noted on the ASI, but this change is due to a change in static pressure, not airspeed [1]. The total pressure in the pitot tube does not change, but the static pressure does [1].\n- The airspeed indicator reacts like an altimeter, showing an increase in airspeed with an increase in altitude, and a decrease in speed as altitude decreases [3]. This occurs as long as the static port remains unobstructed [3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 212-213",
+          "id": "68b2063f-8e9e-5e20-849e-d8696798e1aa"
+        },
+        {
+          "ref": "3",
+          "citation": "Rotorcraft Flying Handbook, pp. 115-116",
+          "id": "4611d5d6-7735-5f89-b844-dc2d3445c4d4"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:08_pilots_handbook_aeronautical_knowledge_c00078",
+      "question": "In most light twin-engine aircraft, why is a left engine failure considered more critical than a right engine failure?",
+      "answer": "The left engine failure is more critical because the descending propeller blade of the right engine is at a greater distance from the center of gravity, giving it a longer moment arm and resulting in more asymmetrical thrust (adverse yaw) when the left engine fails [1].\n\n- This is due to multiengine airplanes being subject to P-factor, similar to single-engine airplanes [1]\n- Many twins are designed with a counter-rotating right engine, which makes neither engine more critical than the other [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 58-59",
+          "id": "29259d8d-8b76-5fe6-9453-ae9bf8bf1df2"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:08_pilots_handbook_aeronautical_knowledge_c00255",
+      "question": "What temperature range does the yellow arc on a carburetor air temperature gauge typically cover, and what action is required if atmospheric conditions favor carburetor icing?",
+      "answer": "The yellow arc on a carburetor air temperature gauge typically ranges between –15 °C and +5 °C (5 °F and 41 °F) [1]. If atmospheric conditions are conducive to carburetor icing, the indicator must be kept outside the yellow arc by applying carburetor heat [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, p. 171",
+          "id": "d860dad6-b76e-546e-9948-45cba30e5462"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:08_pilots_handbook_aeronautical_knowledge_c00672",
+      "question": "How should cruise speeds be adjusted for an airplane that lacks speed fairings?",
+      "answer": "Cruise speeds should be decreased by 2 knots for an airplane without speed fairings [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 455-457",
+          "id": "3ba3eb44-ffbe-5367-9dfd-fc05105df91a"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:09_aerodynamics_for_naval_aviators_1965_c00088",
+      "question": "How does a 50 percent increase in airplane weight affect the thrust required at a given lift coefficient?",
+      "answer": "A 50 percent increase in airplane weight causes a 50 percent increase in thrust required at the same lift coefficient [1][2].\n\nKey details:\n- At a specific lift coefficient, any change in weight causes a like change in thrust required [1].\n- This is also accompanied by a 22.5 percent increase in airspeed to maintain that lift coefficient [1][2].\n- The resulting power required increases by 83.8 percent due to the combined effects of increased thrust and increased speed [2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aerodynamics for Naval Aviators (1965), pp. 117-118",
+          "id": "7d1672a8-f342-5686-bea4-891180fb8ef0"
+        },
+        {
+          "ref": "2",
+          "citation": "Aerodynamics for Naval Aviators (1965), pp. 118-119",
+          "id": "553fe540-2b82-5ee5-a277-080b01e4f5bd"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:09_aerodynamics_for_naval_aviators_1965_c00148",
+      "question": "How does an increase in airplane weight affect the maximum rate of climb and the speed needed to achieve it?",
+      "answer": "An increase in airplane weight reduces the maximum rate of climb, and the aircraft must be operated at a higher climb speed to achieve that smaller peak climb rate [1][2].\n\nKey details:\n- A change in weight alters drag and power required, reducing the reserve power available for climbing [1].\n- The weight also appears directly in the denominator of the equations for climb angle and climb rate [2].\n- This effect holds unless the airplane is compressibility limited [2].\n- Increased weight also requires flying at a higher angle of attack to maintain altitude and speed, which increases induced and parasite drag [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, p. 264",
+          "id": "c75e4893-ac84-5543-be72-764a1b9d5f17"
+        },
+        {
+          "ref": "2",
+          "citation": "Aerodynamics for Naval Aviators (1965), p. 174",
+          "id": "4aaf3a68-16c5-5de1-aeda-e1f34000be21"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:09_aerodynamics_for_naval_aviators_1965_c00345",
+      "question": "What advantage does an angle‑of‑attack indicator have over other flight instruments?",
+      "answer": "An angle-of-attack indicator is not directly affected by gross weight, bank angle, load factor, velocity, or density altitude [1]. It provides increased situational awareness by giving a visual representation of the current AOA and its proximity to the critical AOA [2][4].\n\nKey advantages:\n- It allows the pilot to maintain the recommended angle of attack, ensuring proper approach speed—not too low or too high [1].\n- It helps prevent both over-rotation and excess takeoff speed during takeoff [1].\n- It is especially useful at high angles of attack, where airspeed indications can be less accurate [3].\n- It provides a better parameter than airspeed for avoiding stalls, since an airplane can stall at any speed, but the critical AOA remains constant for a given configuration [4].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aerodynamics for Naval Aviators (1965), p. 376",
+          "id": "4aa9a7b8-9fd3-561b-8640-8dd0cc1b058f"
+        },
+        {
+          "ref": "2",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, p. 124",
+          "id": "beeef08c-3071-584c-b934-0c4003327da7"
+        },
+        {
+          "ref": "4",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 224-225",
+          "id": "511dbc03-ef62-53ad-a423-a2bea8153950"
+        },
+        {
+          "ref": "3",
+          "citation": "Aerodynamics for Naval Aviators (1965), p. 375",
+          "id": "a53fede4-d0a6-56d2-a059-4d0ec3f99c9f"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:09_aerodynamics_for_naval_aviators_1965_c00332",
+      "question": "According to the 1965 Aerodynamics for Naval Aviators handbook, what landing load factor results when an aircraft touches down at 18 ft/sec with a strut effective stroke of 18 inches, and what does that imply about the average force on the gear?",
+      "answer": "The landing load factor would be 3.37 [1].\n\n- The average force would be 3.37 times the weight of the aircraft [1].\n- This example assumes an effective strut stroke of 18 inches (1.5 ft) and a rate of descent of 18 ft/sec [1].\n- A larger effective strut stroke reduces landing loads, since a greater distance of travel reduces the force needed to arrest the vertical descent [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aerodynamics for Naval Aviators (1965), pp. 361-362",
+          "id": "9671b5d6-d341-5850-82ab-53a676caab34"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:09_aerodynamics_for_naval_aviators_1965_c00159",
+      "question": "According to the 1965 Aerodynamics for Naval Aviators, what are the three factors that explain why a turbojet's specific range increases with altitude, and roughly what share of the total benefit at 40,000 ft comes from higher true airspeed versus improved engine performance?",
+      "answer": "The three factors that explain why a turbojet's specific range increases with altitude are:\n\n1. An increase in altitude increases the proportion of (V/Tr) and provides a greater true airspeed (TAS) for the same thrust required [1].\n2. An increase in altitude in the troposphere produces lower inlet air temperature, which reduces specific fuel consumption [1].\n3. An increase in altitude requires increased engine RPM to provide cruise thrust, and specific fuel consumption reduces as normal rated RPM is approached [1].\n\nAt 40,000 ft, the increased TAS accounts for approximately two-thirds of the total benefit, while increased engine performance (reduced specific fuel consumption) accounts for the other one-third [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aerodynamics for Naval Aviators (1965), pp. 184-185",
+          "id": "546f65b2-9e06-5815-b636-d4fdf89c3564"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:09_aerodynamics_for_naval_aviators_1965_c00359",
+      "question": "When an aircraft encounters a sudden horizontal gust that increases its airspeed, what is the typical initial change in altitude before a new equilibrium is reached?",
+      "answer": "When an aircraft encounters a sharp horizontal gust that increases its airspeed, the aircraft tends to float and incur a gain of altitude before equilibrium conditions are achieved [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aerodynamics for Naval Aviators (1965), p. 387",
+          "id": "34266303-5cfd-5e9a-aa99-008922be33b3"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:09_aerodynamics_for_naval_aviators_1965_c00261",
+      "question": "What is the usual range of periods for the phugoid mode of longitudinal dynamic stability?",
+      "answer": "The usual range of periods for the phugoid mode is from 20 to 100 seconds [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aerodynamics for Naval Aviators (1965), p. 297",
+          "id": "c02cf0f6-f263-555d-99b9-d0fa7a549022"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:10_mc4_parachute_technical_manual_c00028",
+      "question": "What weight is used to test the ripcord grip weld and what is inspected during that test?",
+      "answer": "A 40-pound weight is used to test the ripcord grip weld [1][2].\n\nDuring this test:\n- The ripcord grip is positioned on a fixed hook from a corner nearest the weld, and the 40-pound weight is suspended from the opposite corner nearest the weld [1][2].\n- The weight must be suspended without impact, and hands or lifting devices must be fully removed from the weight [1][2].\n- Using suitable illumination, the welded joint is visually inspected for cracks or breaks [1][2].\n- If any cracks or breaks are detected in the welded area, the ripcord is removed from service [1][2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 76-77",
+          "id": "f182f5b2-5754-5e4b-985a-aa822ba742b1"
+        },
+        {
+          "ref": "2",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 56-57",
+          "id": "5431e546-6af3-534e-9bd1-8534c2ef8da3"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:10_mc4_parachute_technical_manual_c00014",
+      "question": "What material is used to construct the main risers?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "single:10_mc4_parachute_technical_manual_c00033",
+      "question": "What is the maximum allowable difference between lines in the A group during a spanwise line check?",
+      "answer": "The maximum allowable difference between lines in the A group during a spanwise line check is 1/2 inch. [1][2]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 95-101",
+          "id": "dab70306-b572-5b83-923d-722a97b730c4"
+        },
+        {
+          "ref": "2",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 71-75",
+          "id": "91cea8f1-82da-5210-bc0b-0aec266d32da"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:10_mc4_parachute_technical_manual_c00045",
+      "question": "How often must the MC‑4 Ram Air Personnel Parachute System 3‑Ring Riser Release be lubricated?",
+      "answer": "The MC-4 Ram Air Personnel Parachute System 3-Ring Riser Release must be lubricated every 120 days [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 105-109",
+          "id": "07312909-a9aa-573b-9690-3db787d73540"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:10_mc4_parachute_technical_manual_c00047",
+      "question": "How long must a parachute be aired before it can be repacked after it has been damp or mildewed?",
+      "answer": "A parachute must be aired for at least 6 hours before being repacked after exposure to dampness or mildew [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 111-113",
+          "id": "7231997e-d11b-5d1d-990f-a5989a5b0417"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:10_mc4_parachute_technical_manual_c00135",
+      "question": "What is the acceptable range for the top/bottom surface span differential on an MTl-S canopy, and what happens if it falls outside that range?",
+      "answer": "The acceptable range for the top/bottom surface span differential on an MTl-S canopy is 4 to 13 inches, with a lower limit of 3 inches and an upper limit of 15 inches [1]. If the differential falls below 3 inches or exceeds 15 inches, the canopy is deemed unacceptable and will be immediately and permanently removed from service [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 343-344",
+          "id": "c218b297-ecb6-5dbf-9d5c-92ccae995055"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:10_mc4_parachute_technical_manual_c00018",
+      "question": "In the MC-4 ram air parachute, how do the crossports cut into the airfoil ribs help maintain the canopy's shape during descent?",
+      "answer": "Crossports allow air to flow spanwise through the canopy to equalize parachute pressurization [1], which helps maintain the canopy's shape and provides its glide characteristics during descent [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, p. 41",
+          "id": "0c0f7c50-dc30-5949-aec8-e733366e704f"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:11_aviation_weather_handbook_c00065",
+      "question": "How does an aneroid barometer detect changes in atmospheric pressure?",
+      "answer": "An aneroid barometer detects changes in atmospheric pressure through a sealed, flexible metal cell (aneroid cell) that contracts or expands as pressure changes [1][2]. This movement is transmitted via a mechanical linkage to a pressure indicator or registering mechanism [1][2].\n\nKey details:\n- The aneroid cell is a closed vessel with air removed to create a partial vacuum [2][5].\n- As atmospheric pressure increases, the cell contracts; as pressure decreases, it expands [1][2].\n- One end of the cell is fixed, while the other moves the registering mechanism, which magnifies the movement to drive an indicator hand along a scale graduated in pressure units [2].\n- The pressure-sensing part of an aircraft altimeter is essentially an aneroid barometer [1][4] (see Figure 8-2) [F3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 288-289",
+          "id": "213e5c8c-2fcd-5cd2-8243-fdc487578c08"
+        },
+        {
+          "ref": "2",
+          "citation": "Aviation Weather Handbook, pp. 96-97",
+          "id": "597e3cff-634d-50a4-b339-05c7f5f3fc1c"
+        },
+        {
+          "ref": "5",
+          "citation": "Instrument Flying Handbook, pp. 347-348",
+          "id": "cfd9acfd-7790-5eea-a465-6366abe90100"
+        },
+        {
+          "ref": "4",
+          "citation": "Glider Flying Handbook, pp. 46-47",
+          "id": "91029a85-0b18-5b48-9939-b573581b60ed"
+        },
+        {
+          "ref": "F3",
+          "citation": "Aviation Weather Handbook, p. 97",
+          "id": "8c273e0b-635f-5c3e-8662-7f8ee7cd22d5"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:11_aviation_weather_handbook_c00293",
+      "question": "When is the AMD NOT SKED remark placed in a TAF and what does it indicate about observation timing?",
+      "answer": "The **AMD NOT SKED** remark is placed in a TAF when observations are missing, unreliable, or incomplete, and it indicates that no amendments will be provided, though the forecast remains valid [3].\n\nKey details on its placement and meaning:\n- **Part-time manual observation sites**: It indicates when observations are scheduled to end and/or resume, with expanded statements including times like **AFT Y1Y1HHmm** (observation ending time), **TIL Y1Y1HHmm** (scheduled resumption time), or **Y1Y1HH/YeYehh** (period of observation unavailability) [1].\n- **Automated sites with part-time augmentation**: The related remark **AMD LTD TO CLD VIS AND WIND** is used instead, indicating amendments will only be issued for specified elements during unattended periods [1][2].\n- **Non-augmented automated sites**: If a critical element is missing or data is unreliable, **AMD NOT SKED** is appended on a separate line, indented five spaces, to the end of an amendment [2].\n- **Routine issuance**: If observations cease before a scheduled TAF issuance, **AMD NOT SKED** immediately follows the valid period group [1].\n- **Minimum observational criteria**: When information sources are missing or incomplete, **AMD NOT SKED** is appended, showing the forecaster has enough data to issue a forecast but will not provide updates [3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "3",
+          "citation": "Aviation Weather Handbook, pp. 421-422",
+          "id": "796ceddb-e467-5ed7-a8a8-72536c20b0d9"
+        },
+        {
+          "ref": "1",
+          "citation": "Aviation Weather Handbook, p. 422",
+          "id": "7f84efa1-f1fe-57c4-8d3f-78bac0ebd6a3"
+        },
+        {
+          "ref": "2",
+          "citation": "Aviation Weather Handbook, pp. 422-423",
+          "id": "539b0050-f72b-592b-b167-7d1099192cd9"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:11_aviation_weather_handbook_c00150",
+      "question": "What is clear‑air turbulence (CAT) and at what altitude does it typically occur?",
+      "answer": "Clear-air turbulence (CAT) is sudden severe turbulence occurring in cloudless regions that causes violent buffeting of aircraft [1]. It is a higher-altitude turbulence, normally occurring above 15,000 ft, particularly between the core of a jet stream and the surrounding air [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Weather Handbook, pp. 237-238",
+          "id": "cf4aea38-082e-5890-9938-06f15620ed36"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:11_aviation_weather_handbook_c00347",
+      "question": "What is the maximum distance allowed for the IFR to VFR transition point from the intended destination?",
+      "answer": "The maximum distance allowed for the IFR to VFR transition point from the intended destination is 50 NM [2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "2",
+          "citation": "Aviation Weather Handbook, pp. 495-496",
+          "id": "4f176d1e-c1a8-513f-a68f-c73cd3f26bee"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:11_aviation_weather_handbook_c00193",
+      "question": "What are the three general categories of surface weather observations, and which type was the primary method before the mid-1990s?",
+      "answer": "The three general categories of surface weather observations are manual, automated, and augmented [1]. Manual surface weather observations were the primary type prior to the mid-1990s [1][2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Weather Handbook, pp. 284-286",
+          "id": "92c3a705-e763-5d0e-b024-1c9c0e451780"
+        },
+        {
+          "ref": "2",
+          "citation": "Aviation Weather Handbook, pp. 286-287",
+          "id": "160c9cee-28e6-5943-9054-acb07e0bf8c8"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:11_aviation_weather_handbook_c00064",
+      "question": "Why does the daily high air temperature typically occur in the midafternoon rather than at solar noon when insolation peaks?",
+      "answer": "The daily high air temperature typically occurs in the midafternoon, not at solar noon when insolation peaks, due to a time lag needed for the air near the ground to heat up. [1]\n\n- Peak insolation occurs around noon, but the maximum surface air temperature usually happens in the midafternoon because this lag is necessary for the air near the ground to heat up via conduction and convection with the surface. [1]\n- The Earth begins to cool once the rate of outgoing terrestrial radiation exceeds the rate of insolation, which occurs after solar noon. [1]\n- This is similar to how the warmest days of the year occur after the summer solstice, also due to a time lag in heat flow processes. [3]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Weather Handbook, pp. 93-95",
+          "id": "ffef77a9-6fe7-545d-9d07-78b580fbf120"
+        },
+        {
+          "ref": "3",
+          "citation": "Aviation Weather Handbook, pp. 91-93",
+          "id": "7d48b9dd-518a-5f23-9491-f00a613aa9ab"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "single:11_aviation_weather_handbook_c00166",
+      "question": "What is the name of the mirage-like optical effect in the Arctic where light bending through a low-level temperature inversion makes objects beyond the horizon appear above it?",
+      "answer": "Looming [1]. It is a form of mirage caused by light rays being bent as they pass at low angles through a low-level temperature inversion, making objects beyond the horizon appear above it [1].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Weather Handbook, p. 254",
+          "id": "5bc1ac61-175c-52a0-aad4-81afdd09e974"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:08_pilots_handbook_aeronautical_knowledge_c00058",
+      "question": "What are examples of external pressures on pilots, and how can pilots and instructors manage them?",
+      "answer": "External pressures are influences external to the flight that create a sense of pressure to complete a flight—often at the expense of safety [2][3]. Examples include:\n\n- Someone waiting at the airport for the flight’s arrival [2][3]\n- A passenger the pilot does not want to disappoint [2][3]\n- The desire to demonstrate pilot qualifications [2][3]\n- The desire to impress someone (\"Watch this!\") [2][3]\n- The desire to satisfy a specific personal goal (\"get-home-itis,\" \"get-there-itis,\" \"let’s-go-itis\") [2][3]\n- The pilot’s general goal-completion orientation [2][3]\n- Emotional pressure from acknowledging lower skill/experience levels than desired—pride can be powerful [2][3]\n\n**How to manage external pressures:**\n\n- Use personal standard operating procedures (SOPs), such as allowing time for extra fuel stops, making backup airline reservations, planning to leave early enough to drive, advising waiting parties of possible delays, managing passenger expectations, and carrying a small overnight kit to eliminate pressure to return home [2][3]\n- Management of external pressure is the single most important key to risk management because it can cause a pilot to ignore all other risk factors [2][3]\n- Be ready for and accept delays—delays happen in all travel modes [2][3]\n\n**How instructors can manage learner external pressures:**\n\n- Ease learner concerns about schedule conflicts with professional and personal events [5]\n- Be conscious of each learner's schedule limitations and other external factors that could affect performance [5]\n- Emphasize the ability to make schedule changes, change training to classroom instruction, or terminate a lesson early if the learner appears apprehensive about time pressures [5]\n- Involve the learner in risk management during dual instruction [1]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "2",
+          "citation": "Aviation Instructor's Handbook, pp. 10-11",
+          "id": "b348f9b3-295b-5e58-a9f2-363ee42b3cf4"
+        },
+        {
+          "ref": "3",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 48-49",
+          "id": "08448bee-9b1a-5da2-9934-8a133254ea04"
+        },
+        {
+          "ref": "5",
+          "citation": "Aviation Instructor's Handbook, pp. 191-192",
+          "id": "90e8de5d-481b-5777-bd99-4679ef6771b3"
+        },
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, p. 191",
+          "id": "a7856507-2f0f-5fe1-9796-e5570172ed17"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:02_glider_flying_handbook_c00139",
+      "question": "What are the main differences between the spin‑entry techniques for gliders and conventional aircraft, and how do the aerodynamic explanations of spin initiation differ in each case?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "multi:04_instrument_procedures_handbook_c00324",
+      "question": "What are the specified minimum climb gradients for the take‑off procedures at Grand Junction runway 11 and Altus runway 17, and how do they differ?",
+      "answer": "The specified minimum climb gradient for Grand Junction runway 11 is **300' per NM to 9300** [1]. For Altus runway 17, the minimum climb gradient is **326' per NM to 1300** [3].\n\nThey differ in both the rate of climb and the target altitude: Grand Junction requires 300' per NM up to 9,300 feet MSL, while Altus requires a steeper 326' per NM but only to 1,300 feet MSL [1][3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Instrument Procedures Handbook, p. 260",
+          "id": "9320b17e-cc39-5fe8-a64e-cbcd11ea8f95"
+        },
+        {
+          "ref": "3",
+          "citation": "Instrument Flying Handbook, p. 32",
+          "id": "64385de6-ffb4-508d-8bae-3eb617fec81f"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:10_mc4_parachute_technical_manual_c00062",
+      "question": "What is the maximum temperature allowed when drying parachute fabric, and how does this relate to the repacking interval requirement for glider parachutes?",
+      "answer": "The maximum allowable drying temperature for parachute fabric is 160°F (71°C), with 140°F (60°C) preferred [1][3]. \n\nRegarding glider parachutes: a certificated and appropriately rated parachute rigger must repack a nylon parachute within the preceding 180 days [4]. This is separate from the MC-4 system's 120-day repack interval for both main and reserve parachutes [2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 127-129",
+          "id": "6adced5f-6295-591d-9c98-41a8d65fba2e"
+        },
+        {
+          "ref": "3",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 115-117",
+          "id": "ea2e0137-582e-5ce9-b608-0641df2fb2b7"
+        },
+        {
+          "ref": "4",
+          "citation": "Glider Flying Handbook, pp. 262-263",
+          "id": "f578b7d1-3c09-5451-a426-7d25ee9aaacb"
+        },
+        {
+          "ref": "2",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 101-103",
+          "id": "3d926e45-67d6-555a-a6db-9190a41d83ff"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:07_rotorcraft_flying_handbook_c00096",
+      "question": "What are the shared take‑off errors described in the two handbooks, and what additional information does the Helicopter Flying Handbook provide that is not found in the Rotorcraft Flying Handbook?",
+      "answer": "The shared take-off errors described in both handbooks include:\n\n- Failing to maintain proper rpm during takeoff [3][4][7]\n- Improper or excessive use of forward cyclic / nose-low attitude during takeoff [3][7]\n- Failing to consider wind effects during takeoff [4][7]\n- Failing to establish and maintain proper climb attitude and airspeed [3][4]\n\nThe Helicopter Flying Handbook provides additional take-off errors not found in the Rotorcraft Flying Handbook, including:\n\n- Failing to perform, or improper performance of, a high or low reconnaissance [4]\n- Flying the approach angle too steep or too shallow for existing conditions [4]\n- Failing to consider emergency landing areas [4]\n- Failure to maintain pinnacle elevation after takeoff [4]\n- Failure to maintain proper approach rate of closure [4]\n- Failure to achieve climb airspeed in a timely manner [4]\n- Departing the surface in an attitude that is too nose-low, requiring excessive power to initiate a climb [7]\n- Using excessive power combined with a level attitude, causing a vertical climb [7]\n- Application of the collective that is too abrupt when departing the surface, causing rpm and heading control errors [7]",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "3",
+          "citation": "Rotorcraft Flying Handbook, pp. 89-90",
+          "id": "64a0423d-56d0-58f4-ac94-1ed5f0c2d292"
+        },
+        {
+          "ref": "4",
+          "citation": "Helicopter Flying Handbook, pp. 135-137",
+          "id": "1e6de0af-245c-5054-a033-5fd7a8386593"
+        },
+        {
+          "ref": "7",
+          "citation": "Helicopter Flying Handbook, pp. 117-118",
+          "id": "2d6236dd-653b-5ff4-a624-9cfac86459ce"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:10_mc4_parachute_technical_manual_c00144",
+      "question": "Which material is explicitly prohibited for repairing a parachute canopy, and what type of fabric is used for constructing the sail panels of a weight‑shift control aircraft?",
+      "answer": "The material explicitly prohibited for repairing a parachute canopy is adhesive nylon parachute mending cloth [4][5]. The sail panels of a weight-shift control aircraft are constructed from polyester materials [1][3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "4",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, pp. 230-233",
+          "id": "aae13cf5-176d-5339-b29a-c30fe3cd266f"
+        },
+        {
+          "ref": "5",
+          "citation": "MC-4 Ram Air Parachute Technical Manual, p. 358",
+          "id": "b4d5cea3-3576-5776-9031-7a95bb3bfaba"
+        },
+        {
+          "ref": "1",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 55-56",
+          "id": "a339598d-8d56-5d37-a628-a2b00badbb5f"
+        },
+        {
+          "ref": "3",
+          "citation": "Weight-Shift Control Aircraft Flying Handbook, pp. 53-55",
+          "id": "1d7c4560-da03-5c0a-815f-bc521c7a4db1"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:01_aviation_instructors_handbook_c00285",
+      "question": "How does the instructor handbook’s requirement for risk‑analysis before solo and cross‑country flights relate to the PAVE checklist’s method of identifying risk categories?",
+      "answer": "The instructor handbook requires risk-analysis before solo and cross-country flights, and the PAVE checklist is the method used to identify risk categories for this analysis [1].\n\n- Before solo flights, instructors should introduce learners to a risk assessment tool and demonstrate its use [4]. By the first solo, the learner should conduct a basic risk analysis [4].\n- For cross-country flights, learners must complete a full risk analysis for every dual and solo cross-country flight, using a FRAT or other analysis method, and the instructor should review and approve it [4].\n- The PAVE checklist divides flight risks into four categories: Pilot (PIC), Aircraft, enVironment, and External pressures [2]. It is an effective and accepted means for identifying risk, providing convenient \"buckets\" for risk identification [5].\n- Instructors should coach learners to use the PAVE checklist methodically and consider all sub-elements in each category [5]. For example, the \"P\" applies to both learner and instructor pilots, covering qualification, currency, proficiency, and aeromedical hazards [5].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aviation Instructor's Handbook, pp. 186-187",
+          "id": "696bc04a-3a8d-5051-8292-9491d5a9e003"
+        },
+        {
+          "ref": "4",
+          "citation": "Aviation Instructor's Handbook, pp. 188-189",
+          "id": "909dc444-6454-51d3-a496-02488cf96af1"
+        },
+        {
+          "ref": "2",
+          "citation": "Aviation Instructor's Handbook, pp. 8-9",
+          "id": "2ce73b39-5e96-54ee-92f9-3b5f4855707a"
+        },
+        {
+          "ref": "5",
+          "citation": "Aviation Instructor's Handbook, p. 187",
+          "id": "e1dd3b07-b3ce-5a2f-aa7d-e3dbc56dd5c6"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:09_aerodynamics_for_naval_aviators_1965_c00214",
+      "question": "How do shock waves affect aircraft control and what design strategies are suggested to mitigate these effects?",
+      "answer": "Shock waves can cause significant control difficulties, including loss of lift, rolling moments, pitch changes, and reduced control effectiveness [1][2]. Design strategies include using swept, thin, low-aspect-ratio surfaces, boundary layer control, high-lift devices, and vortex generators [1]. T-tail configurations are also used to place the horizontal stabilizer away from wing turbulence [2].\n\nKey effects on control:\n- Uneven shock-induced separation can cause a rolling moment (\"wing drop\") [1].\n- Symmetric separation near the wing root reduces downwash on the tail, creating a diving moment (\"tuck under\") [1][2].\n- On swept wings, shock-induced center of pressure shifts cause trim changes; rearward shifts add to diving moments, forward shifts can contribute to \"pitch up\" [1].\n- Airflow separation creates a turbulent wake causing tail buffet, and decreased downwash reduces tail pitch control effectiveness [2].\n- Above critical Mach number, drag rise is accompanied by buffet, trim and stability changes, and decreased control surface effectiveness [2][5].\n\nMitigation strategies:\n- Thin surfaces, low aspect ratio, and sweepback delay and reduce transonic force divergence [1].\n- Boundary layer control, high-lift devices, and vortex generators improve transonic characteristics by increasing boundary layer kinetic energy, requiring stronger shock waves to cause separation [1].\n- T-tail configurations place the horizontal stabilizer far from wing turbulence [2].\n- Adherence to VMO/MMO limits prevents control degradation from compressibility effects like Mach tuck, aileron reversal, or buzz [5].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aerodynamics for Naval Aviators (1965), p. 237",
+          "id": "826c42e1-60ad-5584-b9a6-5cb350fe3832"
+        },
+        {
+          "ref": "2",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 144-145",
+          "id": "1a736766-015a-51c0-a142-9abd11b3ea41"
+        },
+        {
+          "ref": "5",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 141-142",
+          "id": "de404bb0-dfaf-5bf2-99ab-b68e90475171"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:08_pilots_handbook_aeronautical_knowledge_c00741",
+      "question": "How does the definition of \"pilotage\" differ between the Pilot's Handbook of Aeronautical Knowledge and the Glider Flying Handbook, and what additional term related to navigation by visual reference appears in the glider text?",
+      "answer": "The definition of \"pilotage\" is essentially the same in both sources: in the Pilot's Handbook of Aeronautical Knowledge it is defined as \"navigation by visual reference to landmarks\" [6][8], while the Glider Flying Handbook defines it as a \"navigational technique based on flight by reference to ground landmarks\" [1].\n\nAdditional terms related to navigation by visual reference in the glider text:\n- **Dead reckoning:** Computing a heading from true airspeed and wind, then estimating time needed to fly to a destination. Glider pilots generally use pilotage, but may use a combination of both methods [3].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "6",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 498-499",
+          "id": "0813bb47-2e94-518d-96c8-8dce73735e3d"
+        },
+        {
+          "ref": "8",
+          "citation": "Pilot's Handbook of Aeronautical Knowledge, pp. 498-499",
+          "id": "215159fc-dc5e-5089-81d9-bd8b90a014c4"
+        },
+        {
+          "ref": "1",
+          "citation": "Glider Flying Handbook, pp. 273-274",
+          "id": "00e868b8-5208-520f-afda-f6e72458cb19"
+        },
+        {
+          "ref": "3",
+          "citation": "Glider Flying Handbook, p. 228",
+          "id": "d172e77b-2be0-5166-bf69-a9107bf5bdde"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "multi:09_aerodynamics_for_naval_aviators_1965_c00045",
+      "question": "How does the behavior of the center of pressure differ between a symmetrical airfoil and a cambered airfoil, and what does this imply about the aerodynamic center's location?",
+      "answer": "For a symmetrical airfoil, the center of pressure remains fixed at the aerodynamic center in unstalled flight, since changes in lift occur without moving the center of pressure [1][2]. For a cambered airfoil, the center of pressure moves forward as the angle of attack increases, approaching the aerodynamic center as a limit; at low lift coefficients, it can be well aft, even past the trailing edge [2].\n\nThis behavior implies that the aerodynamic center is the point where all changes in lift effectively take place, and the moment about it is constant in unstalled flight for both types [1][3]. For a stable airplane, the center of gravity must be located ahead of the aerodynamic center [2].",
+      "refused": false,
+      "sources": [
+        {
+          "ref": "1",
+          "citation": "Aerodynamics for Naval Aviators (1965), pp. 65-67",
+          "id": "34efc054-394a-5eab-912c-a9d53198e03b"
+        },
+        {
+          "ref": "2",
+          "citation": "Aerodynamics for Naval Aviators (1965), pp. 67-69",
+          "id": "9cb606d1-7c2a-5204-8a7e-5c0e9015613e"
+        },
+        {
+          "ref": "3",
+          "citation": "Aerodynamics for Naval Aviators (1965), pp. 66-67",
+          "id": "84412958-e58a-544a-bea3-058f086e4a48"
+        }
+      ],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:0",
+      "question": "What is the capital of France?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:1",
+      "question": "What is the takeoff checklist for a Boeing 787 Dreamliner?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:2",
+      "question": "How do I program the flight management computer on an Airbus A320?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:3",
+      "question": "What is the current price of a private pilot checkride in the United States?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:4",
+      "question": "Who won the 2022 FIFA World Cup?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:5",
+      "question": "What is the maximum cruise speed of the Cessna Citation Longitude business jet?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:6",
+      "question": "How do I bake sourdough bread at high altitude?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:7",
+      "question": "What are the EASA licensing requirements for a commercial pilot in Germany?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:8",
+      "question": "Which airline has the best on-time performance this year?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    },
+    {
+      "id": "unanswerable:9",
+      "question": "How do I reset the cabin pressurization controller on a Bombardier CRJ900?",
+      "answer": "I couldn't find this in the handbooks.",
+      "refused": true,
+      "sources": [],
+      "invalid": []
+    }
+  ]
+}
