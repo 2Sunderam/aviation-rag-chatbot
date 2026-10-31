@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAA Handbooks RAG</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>FAA Handbooks RAG</h1>
+      <span class="sub" id="models">loading…</span>
+    </div>
+    <button id="pipelineToggle" class="pipeline" title="Show ingestion pipeline">
+      <span id="pipeline">PDF → pages → chunks → vectors</span>
+    </button>
+  </header>
+
+  <section id="pipelinePanel" hidden>
+    <div class="flow" id="flow"></div>
+    <table id="books"><thead><tr><th>Book</th><th>Pages</th><th>OCR pages</th><th>Chunks</th><th>Figures</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <main>
+    <section class="chat">
+      <div id="messages">
+        <div class="empty">
+          <p>Ask anything about the 11 FAA handbooks.</p>
+          <div class="examples">
+            <button>What causes carburetor icing and how do you fix it?</button>
+            <button>What do VASI lights indicate?</button>
+            <button>What are the requirements to enter Class B airspace?</button>
+            <button>How does a helicopter autorotation work?</button>
+          </div>
+        </div>
+      </div>
+      <form id="form">
+        <textarea id="input" rows="1" placeholder="Ask a question…" autocomplete="off"></textarea>
+        <button id="send" type="submit">Send</button>
+        <button id="reset" type="button" class="ghost" title="Clear conversation memory">New chat</button>
+      </form>
+    </section>
+
+    <aside class="retrieval">
+      <div class="panel-head">
+        <h2>Retrieval</h2>
+        <span class="legend"><i class="both"></i>both <i class="dense"></i>semantic <i class="bm25"></i>keyword</span>
+      </div>
+      <div id="timings" class="timings"></div>
+      <div id="query" class="query"></div>
+      <h3 id="figHead" hidden>Figures</h3>
+      <div id="figures" class="figures"></div>
+      <h3 id="chunkHead" hidden>Top chunks (hybrid: dense + BM25 → RRF)</h3>
+      <div id="chunks"></div>
+      <p class="placeholder" id="retrievalEmpty">Retrieved chunks, scores and figures appear here.</p>
+    </aside>
+  </main>
+
+  <dialog id="lightbox"><img alt=""><p></p><button class="ghost" onclick="this.closest('dialog').close()">Close</button></dialog>
+  <script src="/static/app.js"></script>
+</body>
+</html>
