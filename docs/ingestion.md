@@ -5,23 +5,27 @@ Code: `rag/ingestion/` · Run: `uv run python -m rag.ingestion.run [--only 08] [
 ## Steps (per book, `extract.process_pdf`)
 
 1. **Fast text pass.** `pymupdf4llm.to_markdown(page_chunks=True, use_ocr=NEVER, header=False, footer=False)`
+
    reads the PDF's own text layer and returns markdown per page with its page number.
-   The layout model labels regions (heading, text, table, picture, caption, page-header, page-footer);
-   headers and footers are dropped. ~5 pages/s on an M1.
+     The layout model labels regions (heading, text, table, picture, caption, page-header, page-footer);
+     headers and footers are dropped. ~5 pages/s on an M1.
 2. **Quality check per page** (`quality.py`):
-   - word count and share of real English words (macOS dictionary `/usr/share/dict/words`)
+   - word count and share of real English words (pyspellchecker)
    - old OCR layer present? (invisible text, PDF render mode 3)
    - a page is sent to OCR if it **has an old OCR layer and < 85 % real words** (bad scan text),
-     or **has < 15 words and contains an image** (image-only page).
+    or **has < 15 words and contains an image** (image-only page).
 3. **OCR only for those pages.** `to_markdown(..., use_ocr=FORCE_DROP_OLD)` with **RapidOCR**.
+
    The OCR text is kept only if it is better (more words or higher real-word ratio).
-   OCR errors (e.g. an undecodable JPX image) are logged and the page keeps its native text.
+     OCR errors (e.g. an undecodable JPX image) are logged and the page keeps its native text.
 4. **Cleanup** (`clean.py`): NFKC unicode, join hyphenated line breaks, drop stray page numbers
+
    ("3-12") and picture-text markers, collapse whitespace, language detection (pages with >= 50 words).
 5. **Figures.** Layout `picture` regions are grouped by nearest caption (one figure is often split
+
    into several boxes), regions smaller than 120 pt (~1.7 in) are skipped, the rest are cropped to PNG
-   at 110 dpi, de-duplicated by hash. Scanned books have no caption boxes, so the caption falls back
-   to the "Figure x.y ..." line on the page.
+     at 110 dpi, de-duplicated by hash. Scanned books have no caption boxes, so the caption falls back
+     to the "Figure x.y ..." line on the page.
 
 ## Output
 
