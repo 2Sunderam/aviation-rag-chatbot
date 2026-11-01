@@ -2415,6 +2415,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pyspellchecker"
+version = "0.9.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/fa/95/d51ece11c06aeefac50dd64459ae1c565d2d43fe27f826bebc760ee950ed/pyspellchecker-0.9.1.tar.gz", hash = "sha256:786c21f082d4059b139bca922cd6db6c85c800374b904b59a8f61d75a0a62d7f", size = 7239938, upload-time = "2026-10-10T16:13:31.059Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/3b/558bc6def007152f0128ff0c8a6825708ac22bafdb295dc85cbec1f6ec22/pyspellchecker-0.9.1-py3-none-any.whl", hash = "sha256:c79b144b4bad20024bf489ad3ffd96b76f3f53439e9fa59ac607896352852f3d", size = 7237189, upload-time = "2026-10-10T16:13:29.045Z" },
+]
+
+[[package]]
 name = "python-dateutil"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2515,6 +2524,7 @@ dependencies = [
     { name = "onnxruntime" },
     { name = "pymupdf" },
     { name = "pymupdf4llm" },
+    { name = "pyspellchecker" },
     { name = "python-dotenv" },
     { name = "qdrant-client" },
     { name = "rapidocr" },
@@ -2538,6 +2548,7 @@ requires-dist = [
     { name = "onnxruntime", specifier = ">=1.31.1" },
     { name = "pymupdf", specifier = ">=2.0" },
     { name = "pymupdf4llm", specifier = ">=2.0" },
+    { name = "pyspellchecker", specifier = ">=0.9.1" },
     { name = "python-dotenv", specifier = ">=1.2.4" },
     { name = "qdrant-client", specifier = ">=1.20.0" },
     { name = "rapidocr", specifier = ">=3.10.0" },

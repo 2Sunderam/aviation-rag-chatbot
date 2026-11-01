@@ -25,6 +25,9 @@ def is_relevant(payload: dict, gold: dict) -> bool:
 
 
 def pct(values: list[float], p: float) -> float:
+    """p-th percentile (nearest rank): the value that p% of the values are at or below.
+    Used for latency: pct(times, 50) = median (p50), pct(times, 95) = slow-tail p95.
+    e.g. 20 timings, p=95 -> index round(0.95 * 19) = 18 -> 2nd slowest."""
     if not values:
         return 0.0
     s = sorted(values)
@@ -32,10 +35,14 @@ def pct(values: list[float], p: float) -> float:
 
 
 def mean(values: list[float]) -> float:
+    """Average, 0.0 for an empty list instead of raising. Averaging 0/1 flags gives a rate,
+    e.g. mean([1, 0, 1, 1]) = 0.75 = 75% of questions refused / cited correctly."""
     return statistics.fmean(values) if values else 0.0
 
 
 def write_result(name: str, data: dict, markdown: str) -> Path:
+    """Save full numbers to results/<name>_<timestamp>.json (history, never overwritten)
+    and a readable summary to results/<name>_latest.md (overwritten each run)."""
     RESULTS.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     path = RESULTS / f"{name}_{stamp}.json"

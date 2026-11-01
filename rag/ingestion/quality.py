@@ -3,19 +3,20 @@
 import re
 from functools import lru_cache
 
-DICT_PATH = "/usr/share/dict/words"  # ships with macOS
+from spellchecker import SpellChecker
+
 SUFFIXES = ("s", "es", "ed", "d", "ing", "ly", "er", "al")
 
-# Thresholds calibrated on book 08 (clean) vs book 09 (old scan):
-# clean text pages score 0.90-0.98, garbage OCR on figure pages 0.63-0.79.
+# Thresholds calibrated on book 08 (clean) vs book 09 (old scan) with the old
+# macOS word list: clean text pages scored 0.90-0.98, garbage OCR 0.63-0.79.
 MIN_REAL_WORD_RATIO = 0.85
 MIN_WORDS = 15
 
 
 @lru_cache(maxsize=1)
 def _words() -> frozenset[str]:
-    with open(DICT_PATH) as f:
-        return frozenset(w.strip().lower() for w in f)
+    # English word list bundled with pyspellchecker, so this works on any OS
+    return frozenset(SpellChecker(language="en", distance=1).word_frequency.keys())
 
 
 def _is_word(w: str) -> bool:
